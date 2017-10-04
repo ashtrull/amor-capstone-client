@@ -6,7 +6,8 @@ const app = require('../app.js')
 const addOfferSuccess = (data) => {
   console.log(data)
   console.log('Offer submitted!')
-  $('.center-prompt').text('Thank you for submitting a solidarity offer')
+  $('#all-offers-table tr:last').after('<tr id="offer-' + data.offer.id + '"><td>' + data.offer.id + '</td><td>' + data.offer.user_id + '</td><td>' + data.offer.offer_type + '</td></tr>')
+  $('.center-prompt').text('Thank you for submitting a solidarity request')
 }
 
 const addOfferFail = (error) => {
@@ -18,6 +19,7 @@ const addOfferFail = (error) => {
 const addRequestSuccess = (data) => {
   console.log(data)
   console.log('Request submitted!')
+  $('#all-requests-table tr:last').after('<tr id="request-' + data.request.id + '"><td>' + data.request.id + '</td><td>' + data.request.user_id + '</td><td>' + data.request.request_type + '</td></tr>')
   $('.center-prompt').text('Thank you for submitting a solidarity request')
 }
 
@@ -57,7 +59,6 @@ const getRequestsSuccess = (data) => {
   console.log(requestsData)
   const createHTML = function (data) {
     const rawTemplate = $('#requests-template').html()
-    console.log(rawTemplate)
     const compiledTemplate = Handlebars.compile(rawTemplate)
     console.log(compiledTemplate)
     const context = {
@@ -94,6 +95,32 @@ const deleteRequestFail = (error) => {
   console.log(error)
 }
 
+const updateOfferSuccess = (data) => {
+  console.log('ui.js updateOfferSuccess')
+  console.log(data)
+  const rowId = '#offer-' + data.offer.id
+  console.log(rowId)
+  $('' + rowId).children().eq(2).empty
+  $('' + rowId).children().eq(2).text(data.offer.offer_type)
+}
+
+const updateOfferFail = (error) => {
+  console.log(error)
+}
+
+const updateRequestSuccess = (data) => {
+  console.log('ui.js updateRequestSuccess')
+  console.log(data)
+  const rowId = '#request-' + data.request.id
+  console.log(rowId)
+  $('' + rowId).children().eq(2).empty
+  $('' + rowId).children().eq(2).text(data.request.request_type)
+}
+
+const updateRequestFail = (error) => {
+  console.log(error)
+}
+
 module.exports = {
   addOfferSuccess,
   addOfferFail,
@@ -106,5 +133,9 @@ module.exports = {
   deleteOfferSuccess,
   deleteOfferFail,
   deleteRequestSuccess,
-  deleteRequestFail
+  deleteRequestFail,
+  updateOfferSuccess,
+  updateOfferFail,
+  updateRequestSuccess,
+  updateRequestFail
 }

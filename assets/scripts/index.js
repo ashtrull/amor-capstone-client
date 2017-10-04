@@ -23,6 +23,8 @@ $(() => {
   $('.show-offers-btn').on('click', resourceEvents.onGetOffers)
   $('.delete-offer-form').on('submit', resourceEvents.onDeleteOffer)
   $('.delete-request-form').on('submit', resourceEvents.onDeleteRequest)
+  $('.change-offer-form').on('submit', resourceEvents.onUpdateOffer)
+  $('.change-request-form').on('submit', resourceEvents.onUpdateRequest)
 })
 
 module.exports = {

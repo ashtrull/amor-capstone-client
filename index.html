@@ -98,7 +98,7 @@
       <!-- Resources forms -->
       <!-- Make offer form -->
       <div class="row resource container">
-        <div class="offer-container col-sm-5">
+        <div class="offer-container col-sm-4">
           <form class="offer-form">
             <h2>Add a Solidarity Offer</h2>
             <div class="form-group">
@@ -117,10 +117,10 @@
             </div>
             <div class="form-group">
               <label for="exampleSelect1">What type of solidarity offer would you like to make?</label>
-              <select class="form-control" name="type" id="exampleSelect1">
+              <select class="form-control" name="type" id="input-type">
             <option>Legal support</option>
             <option>Solidarity housing</option>
-            <option>Menthal health support</option>
+            <option>Mental health support</option>
             <option>Financial support</option>
             <option>Other</option>
           </select>
@@ -152,14 +152,27 @@
             </script>
           </div>
           <!-- Delete offer form -->
+          <h4>Delete an Offer</h4>
           <form class="delete-offer-form">
-            <input type="number" name="offer_id" value="" placeholder="Offer ID">
+            <input type="number" name="offer_id" value="" placeholder="Offer ID"><br>
             <button type="submit" id="delete-offer-btn" name="delete-offer-btn" class="btn-success">Delete</button>
           </form>
+          <h4>Update an Offer</h4>
+          <form class="change-offer-form">
+          <input type="number" name="offer_id" value="" placeholder="Offer ID">
+          <select class="form-control" name="type" id="select-resource-type">
+          <option>Legal support</option>
+          <option>Solidarity housing</option>
+          <option>Menthal health support</option>
+          <option>Financial support</option>
+          <option>Other</option>
+          </select>
+          <button type="submit" id="update-offer-btn" name="update-offer-btn" class="btn-success">Update</button>
+      </form>
           <!-- offer form container closed below -->
         </div>
         <!-- Make request form -->
-        <div class="request-container col-sm-5">
+        <div class="request-container col-sm-4">
           <form class="request-form">
             <h2>Add a Solidarity Request</h2>
             <div class="form-group">
@@ -177,11 +190,11 @@
               <small id="phone-help" class="form-text text-muted">We'll never share your phone number with anyone else.</small>
             </div>
             <div class="form-group">
-              <label for="exampleSelect1">What type of solidarity offer would you like to make?</label>
-              <select class="form-control" id="exampleSelect1">
+              <label for="exampleSelect1">What type of solidarity request would you like to make?</label>
+              <select class="form-control" name="type" id="input-type">
                 <option>Legal support</option>
                 <option>Solidarity housing</option>
-                <option>Menthal health support</option>
+                <option>Mental health support</option>
                 <option>Financial support</option>
                 <option>Other</option>
               </select>
@@ -214,9 +227,22 @@
               <!-- requests container closed below -->
           </div>
           <!-- Delete request form -->
+          <h4>Delete a Request</h4>
           <form class="delete-request-form">
-            <input type="number" name="request_id" value="" placeholder="Request ID">
+            <input type="number" name="request_id" value="" placeholder="Request ID"><br>
             <button type="submit" id="delete-request-btn" name="delete-request-btn" class="btn-success">Delete</button>
+          </form>
+          <h4>Update a Request</h4>
+          <form class="change-request-form">
+            <input type="number" name="request" value="" placeholder="Request ID">
+            <select class="form-control" name="type" id="select-resource-type">
+            <option>Legal support</option>
+            <option>Solidarity housing</option>
+            <option>Mental health support</option>
+            <option>Financial support</option>
+            <option>Other</option>
+            </select>
+            <button type="submit" id="update-request-btn" name="update-request-btn" class="btn-success">Update</button>
           </form>
           <!-- request container closed below -->
         </div>
