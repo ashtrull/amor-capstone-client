@@ -1,14 +1,20 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+#select-resource-type {
+  width: 150px;
+}
+
 .header {
   background-color: red;
   text-align: center;
+  width: 100%;
 }
 
 .navbar {
   background-color: black;
-  height: 100px;
+  height: 80px;
+  width: 100%;
 }
 
 .sidebar {

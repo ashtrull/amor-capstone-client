@@ -64,11 +64,26 @@ const onDeleteRequest = (event) => {
     .fail(ui.deleteRequestFail)
 }
 
+const onUpdateOffer = (event) => {
+  event.preventDefault()
+  console.log(event.target)
+  const data = getFormFields(event.target)
+  const offer = data.offer_id
+  const rowId = '#offer-' + data.offer_id
+  console.log(data)
+  console.log(rowId)
+  api.updateOffer(data)
+    .then(api.showOffer(offer))
+    .done(ui.updateOfferSuccess)
+    .fail(ui.updateOfferFail)
+}
+
 module.exports = {
   onMakeOffer,
   onMakeRequest,
   onGetOffers,
   onGetRequests,
   onDeleteOffer,
-  onDeleteRequest
+  onDeleteRequest,
+  onUpdateOffer
 }

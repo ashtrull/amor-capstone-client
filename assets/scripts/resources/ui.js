@@ -94,6 +94,15 @@ const deleteRequestFail = (error) => {
   console.log(error)
 }
 
+const updateOfferSuccess = (data) => {
+  console.log('ui.js updateOfferSuccess')
+  console.log(data)
+  const rowId = '#offer-' + data.offer.id
+  console.log(rowId)
+  $('' + rowId).children().eq(2).empty
+  $('' + rowId).children().eq(2).text(data.offer.offer_type)
+}
+
 module.exports = {
   addOfferSuccess,
   addOfferFail,
@@ -106,5 +115,6 @@ module.exports = {
   deleteOfferSuccess,
   deleteOfferFail,
   deleteRequestSuccess,
-  deleteRequestFail
+  deleteRequestFail,
+  updateOfferSuccess
 }

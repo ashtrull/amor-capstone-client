@@ -79,11 +79,42 @@ const deleteRequest = (data) => {
   })
 }
 
+const updateOffer = (data) => {
+  console.log('api.js updateOffer')
+  console.log(data)
+  return $.ajax({
+    url: app.host + '/offers/' + data.offer_id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    },
+    data: {
+      'offer': {
+        'offer_type': data.type
+      }
+    }
+  })
+}
+
+const showOffer = (offer) => {
+  console.log('api.js showOffer')
+  console.log(offer)
+  return $.ajax({
+    url: app.host + '/offers/' + offer,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    }
+  })
+}
+
 module.exports = {
   addOffer,
   addRequest,
   getOffers,
   getRequests,
   deleteOffer,
-  deleteRequest
+  deleteRequest,
+  updateOffer,
+  showOffer
 }
