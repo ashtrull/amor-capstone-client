@@ -8,6 +8,26 @@ const addOfferSuccess = (data) => {
   $('.center-prompt').text('Thank you for submitting a solidarity offer')
 }
 
+const addOfferFail = (error) => {
+  console.log(error)
+  console.log('Could not submit offer')
+  $('.center-prompt').text('Sorry, something went wrong. Please try again!')
+
+}
+
+const addRequestSuccess = (data) => {
+  console.log(data)
+  console.log('Request submitted!')
+  $('.center-prompt').text('Thank you for submitting a solidarity request')
+}
+
+const addRequestFail = (error) => {
+  console.log(error)
+  console.log('Could not submit request')
+  $('.center-prompt').text('Sorry, something went wrong. Please try again!')
+
+}
+
 const signUpFail = () => {
   console.log('Passwords did not match or username taken.')
   $('#register-modal').modal('toggle')
@@ -60,6 +80,9 @@ const signOutFail = (error) => {
 
 module.exports = {
   addOfferSuccess,
+  addOfferFail,
+  addRequestSuccess,
+  addRequestFail,
   signUpFail,
   signInSuccess,
   signInFail,

@@ -19,6 +19,9 @@ $(() => {
   // resource form events
   $('.offer-form').on('submit', resourceEvents.onMakeOffer)
   $('.request-form').on('submit', resourceEvents.onMakeRequest)
+  $('.show-requests-btn').on('click', resourceEvents.onGetRequests)
+  $('.show-offers-btn').on('click', resourceEvents.onGetOffers)
+
 })
 
 module.exports = {

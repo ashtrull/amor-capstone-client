@@ -3,8 +3,9 @@ const app = require('../app.js')
 // const config = require('../config.js')
 
 // AJAX POST for new account
-const addOffer = function (data) {
+const addOffer = (data) => {
   console.log(data)
+  console.log(app.user)
   return $.ajax({
     url: app.host + '/offers',
     headers: {'header': 'Content-Type: application/json'},
@@ -17,6 +18,27 @@ const addOffer = function (data) {
     }
   })
 }
+
+const addRequest = (data) => {
+  console.log(data)
+  console.log(app.user)
+  return $.ajax({
+    url: app.host + '/requests',
+    headers: {'header': 'Content-Type: application/json'},
+    method: 'POST',
+    data: {
+      'request': {
+        'user_id': app.user.id,
+        'request_type': data.type
+      }
+    }
+  })
+}
+
+const getOffers = () => {
+
+}
+
 
 // AJAX POST log in for existing account
 const signIn = function (data) {
@@ -63,6 +85,7 @@ const signOut = (data) => {
 
 module.exports = {
   addOffer,
+  addRequest,
   signIn,
   changePassword,
   signOut
