@@ -78,6 +78,20 @@ const onUpdateOffer = (event) => {
     .fail(ui.updateOfferFail)
 }
 
+const onUpdateRequest = (event) => {
+  event.preventDefault()
+  console.log(event.target)
+  const data = getFormFields(event.target)
+  const request = data.request_id
+  const rowId = '#request-' + data.request_id
+  console.log(data)
+  console.log(rowId)
+  api.updateOffer(data)
+    .then(api.showOffer(request))
+    .done(ui.updateOfferSuccess)
+    .fail(ui.updateOfferFail)
+}
+
 module.exports = {
   onMakeOffer,
   onMakeRequest,
@@ -85,5 +99,6 @@ module.exports = {
   onGetRequests,
   onDeleteOffer,
   onDeleteRequest,
-  onUpdateOffer
+  onUpdateOffer,
+  onUpdateRequest
 }
