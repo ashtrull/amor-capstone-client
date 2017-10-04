@@ -40,9 +40,35 @@ const onGetRequests = (event) => {
     .fail(ui.getRequetsFail)
 }
 
+const onDeleteOffer = (event) => {
+  event.preventDefault()
+  console.log(event.target)
+  const data = getFormFields(event.target)
+  const rowId = '#offer-' + data.offer_id
+  console.log(data)
+  console.log(rowId)
+  api.deleteOffer(data)
+    .done(ui.deleteOfferSuccess(rowId))
+    .fail(ui.deleteOfferFail)
+}
+
+const onDeleteRequest = (event) => {
+  event.preventDefault()
+  console.log(event.target)
+  const data = getFormFields(event.target)
+  const rowId = '#request-' + data.request_id
+  console.log(data)
+  console.log(rowId)
+  api.deleteRequest(data)
+    .done(ui.deleteRequestSuccess(rowId))
+    .fail(ui.deleteRequestFail)
+}
+
 module.exports = {
   onMakeOffer,
   onMakeRequest,
   onGetOffers,
-  onGetRequests
+  onGetRequests,
+  onDeleteOffer,
+  onDeleteRequest
 }
