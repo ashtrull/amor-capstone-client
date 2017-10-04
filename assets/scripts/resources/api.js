@@ -36,9 +36,26 @@ const addRequest = (data) => {
 }
 
 const getOffers = () => {
-
+  console.log('api.js getOffers')
+  return $.ajax({
+    url: app.host + '/offers',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    }
+  })
 }
 
+const getRequests = () => {
+  console.log('api.js getRequests')
+  return $.ajax({
+    url: app.host + '/requests',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    }
+  })
+}
 
 // AJAX POST log in for existing account
 const signIn = function (data) {
@@ -86,6 +103,8 @@ const signOut = (data) => {
 module.exports = {
   addOffer,
   addRequest,
+  getOffers,
+  getRequests,
   signIn,
   changePassword,
   signOut
