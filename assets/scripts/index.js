@@ -21,6 +21,8 @@ $(() => {
   $('.request-form').on('submit', resourceEvents.onMakeRequest)
   $('.show-requests-btn').on('click', resourceEvents.onGetRequests)
   $('.show-offers-btn').on('click', resourceEvents.onGetOffers)
+  $('.delete-offer-form').on('submit', resourceEvents.onDeleteOffer)
+  $('.delete-request-form').on('submit', resourceEvents.onDeleteRequest)
 })
 
 module.exports = {

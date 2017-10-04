@@ -1,7 +1,7 @@
 'use strict'
+const Handlebars = require('../../handlebars-v4.0.10.js')
 
 const app = require('../app.js')
-const Handlebars = require('../../handlebars-v4.0.10.js')
 
 const addOfferSuccess = (data) => {
   console.log(data)
@@ -26,7 +26,6 @@ const addRequestFail = (error) => {
   console.log('Could not submit request')
   $('.center-prompt').text('Sorry, something went wrong. Please try again!')
 }
-
 const getOffersSuccess = (data) => {
   console.log('ui.js getOffersSuccess')
   console.table(data.offers)
@@ -75,6 +74,26 @@ const getRequestsFail = (error) => {
   console.log(error)
 }
 
+const deleteOfferSuccess = (rowId) => {
+  console.log('ui.js deleteOfferSuccess')
+  console.log(rowId)
+  $('' + rowId).remove()
+}
+
+const deleteOfferFail = (error) => {
+  console.log(error)
+}
+
+const deleteRequestSuccess = (rowId) => {
+  console.log('ui.js deleteRequestSuccess')
+  console.log(rowId)
+  $('' + rowId).remove()
+}
+
+const deleteRequestFail = (error) => {
+  console.log(error)
+}
+
 module.exports = {
   addOfferSuccess,
   addOfferFail,
@@ -83,5 +102,9 @@ module.exports = {
   getOffersSuccess,
   getOffersFail,
   getRequestsSuccess,
-  getRequestsFail
+  getRequestsFail,
+  deleteOfferSuccess,
+  deleteOfferFail,
+  deleteRequestSuccess,
+  deleteRequestFail
 }

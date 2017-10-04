@@ -57,42 +57,21 @@ const getRequests = () => {
   })
 }
 
-// AJAX POST log in for existing account
-const signIn = function (data) {
-  console.log(data)
+const deleteOffer = (data) => {
+  console.log('api.js deleteOffer')
   return $.ajax({
-    url: app.host + '/sign-in',
-    method: 'POST',
-    data: {
-      'credentials': {
-        'email': data.credentials.email,
-        'password': data.credentials.password
-      }
-    }
-  })
-}
-
-const changePassword = function (data) {
-  console.log(app.user.token)
-  return $.ajax({
-    url: app.host + '/change-password/' + app.user.id,
-    method: 'PATCH',
+    url: app.host + '/offers/' + data.offer_id,
+    method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + app.user.token
-    },
-    data: {
-      'passwords': {
-        'old': data.credentials.password,
-        'new': data.credentials.newpassword
-      }
     }
   })
 }
 
-const signOut = (data) => {
-  console.log(data)
+const deleteRequest = (data) => {
+  console.log('api.js deleteRequest')
   return $.ajax({
-    url: app.host + '/sign-out/' + app.user.id,
+    url: app.host + '/requests/' + data.request_id,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + app.user.token
@@ -105,7 +84,6 @@ module.exports = {
   addRequest,
   getOffers,
   getRequests,
-  signIn,
-  changePassword,
-  signOut
+  deleteOffer,
+  deleteRequest
 }

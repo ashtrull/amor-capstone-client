@@ -97,8 +97,8 @@
     <div class="center-content col-xs-9">
       <!-- Resources forms -->
       <!-- Make offer form -->
-      <div class="row form container">
-        <div class="offer-form-container col-sm-5">
+      <div class="row resource container">
+        <div class="offer-container col-sm-5">
           <form class="offer-form">
             <h2>Add a Solidarity Offer</h2>
             <div class="form-group">
@@ -127,10 +127,39 @@
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
+          <!-- Offers Table -->
+          <div class="all-offers" id='offers-container'>
+            <script class="all-offers" id="offers-template" type="text/x-handlebars-template">
+              <table class="all-offers" id="all-offers-table">
+                <thead>
+                  <tr>
+                    <th>Offer ID</th>
+                    <th>User ID</th>
+                    <th>Type of Offer</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {{#each offers}}
+                  <tr id="offer-{{id}}">
+                    <!-- add checkbox here for future form functionality in making matches -->
+                    <td>{{id}}</td>
+                    <td>{{user_id}}</td>
+                    <td>{{offer_type}}</td>
+                  </tr>
+                  {{/each}}
+                </tbody>
+              </table>
+            </script>
+          </div>
+          <!-- Delete offer form -->
+          <form class="delete-offer-form">
+            <input type="number" name="offer_id" value="" placeholder="Offer ID">
+            <button type="submit" id="delete-offer-btn" name="delete-offer-btn" class="btn-success">Delete</button>
+          </form>
           <!-- offer form container closed below -->
         </div>
         <!-- Make request form -->
-        <div class="request-form-container col-sm-5">
+        <div class="request-container col-sm-5">
           <form class="request-form">
             <h2>Add a Solidarity Request</h2>
             <div class="form-group">
@@ -159,38 +188,7 @@
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
-          <!-- request form container closed below -->
-        </div>
-        <!-- form container closed below -->
-      </div>
-      <!-- Query tables -->
-      <div class="row table container">
-        <div class="offer-table-container col-sm-5" id="all-offers-view">
-          <div class="all-offers" id='offers-container'>
-            <script class="all-offers" id="offers-template" type="text/x-handlebars-template">
-              <table class="all-offers" id="all-offers-table">
-                <thead>
-                  <tr>
-                    <th>Offer ID</th>
-                    <th>User ID</th>
-                    <th>Type of Offer</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {{#each offers}}
-                  <tr>
-                    <!-- add checkbox here for future form functionality in making matches -->
-                    <td>{{id}}</td>
-                    <td>{{user_id}}</td>
-                    <td>{{offer_type}}</td>
-                  </tr>
-                  {{/each}}
-                </tbody>
-              </table>
-            </script>
-          </div>
-        </div>
-        <div class="request-table-container col-sm-5" id="all-requests-view">
+          <!-- Requests table -->
           <div class="all-requests" id='requests-container'>
             <script class="all-requests" id="requests-template" type="text/x-handlebars-template">
               <table class="all-requests" id="all-requests-table">
@@ -203,7 +201,7 @@
                 </thead>
                 <tbody>
                   {{#each requests}}
-                  <tr>
+                  <tr id="request-{{id}}">
                     <!-- add checkbox here for future form functionality in making matches -->
                     <td>{{id}}</td>
                     <td>{{user_id}}</td>
@@ -215,9 +213,14 @@
             </script>
               <!-- requests container closed below -->
           </div>
-          <!-- request-table-container closed below -->
+          <!-- Delete request form -->
+          <form class="delete-request-form">
+            <input type="number" name="request_id" value="" placeholder="Request ID">
+            <button type="submit" id="delete-request-btn" name="delete-request-btn" class="btn-success">Delete</button>
+          </form>
+          <!-- request container closed below -->
         </div>
-        <!-- table container closed below-->
+        <!-- resource container closed below -->
       </div>
       <!-- center content closed below -->
     </div>
