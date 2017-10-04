@@ -2,7 +2,8 @@
 
 const config = {
   apiOrigins: {
-    production: 'https://ga-wdi-boston.herokuapp.com'
+    development: 'https://amoridarity.herokuapp.com/',
+    // production: 'https://amoridarity.herokuapp.com/'
   }
 }
 

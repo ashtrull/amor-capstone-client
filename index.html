@@ -1,25 +1,157 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>AMORidarity</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body class="container-fluid">
-      <h1>Example</h1>
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
-    </body>
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+<!-- Page body -->
+
+<body class="container">
+  <!-- Header container -->
+  <div class="row container-fluid header">
+    <!-- Header (full width) -->
+    <div class="amor-header col-sm-12">
+      <h1>AMORidarity</h1>
+    </div>
+  </div>
+  <!--Navbar (full width)  -->
+  <div class="row navbar">
+    <div class="navbar-menu col-sm-12">
+    </div>
+  </div>
+  <!-- Body container -->
+  <div class="row container-fluid body">
+    <!-- Sidebar (left)-->
+    <div class="sidebar col-sm-3">
+      <h5 class="sidebar-prompt">Administrator Login</h5>
+      <button class="btn-success" id="signin-btn"><a href="#" data-toggle="modal" data-target="#signin-modal">Login</a></button>
+      <button class="btn-success" id="changepw-btn"><a href="#" data-toggle="modal" data-target="#changepw-modal">Change Password</a></button>
+      <button class="btn-success" id="signout-btn">Logout</button>
+      <div class="modal fade" id="signin-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+          <div class="loginmodal-container">
+            <h3>Login to Your Account</h3><br>
+            <form class="user-signin-form">
+              <input type="text" name="credentials[email]" value="" placeholder="Email">
+              <input type="password" name="credentials[password]" value="" placeholder="Password">
+              <button type="submit" id="signin-submit-btn" name="sign-in-btn" class="btn-success login loginmodal-submit" value="Login">Login</button>
+            </form>
+            <div class="login-help">
+              <h4>Don't have an account yet?</h4>
+              <button class="success"><a href="#"data-toggle="modal" data-target="#register-modal">Register </a></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="register-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+          <div class="loginmodal-container">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3>Sign up!</h3>
+            <form class="user-signup-form">
+              <input type="text" name="credentials[email]" value="" placeholder="Email">
+              <input type="password" name="credentials[password]" value="" placeholder="Password">
+              <input type="password" name="credentials[password_confirmation]" value="" placeholder="Confirm Password">
+              <button type="submit" id="signup-btn" name="register" class="btn-success register register-modal-submit" value="Register">Register</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="modal fade" id="changepw-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+          <div class="changepw-modal-container">
+            <h1>Change Password</h1><br>
+            <form class="user-changepw-form">
+              <input type="password" name="credentials[password]" value="" placeholder="Password">
+              <input type="password" name="credentials[newpassword]" value="" placeholder="Confirm Password">
+              <button type="submit" id="changepw-submit-btn" name="changepw-btn" class="btn-success changepw changepwmodal-submit" value="Change Password">Change Password</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div>
+        <button class="btn-success">Show Requests and Offers</button>
+    </div>
+  </div>
+    <div class="center-content col-xs-9">
+      <div class="col-sm-5">
+      <form>
+        <h2>Make a Solidarity Offer</h2>
+        <div class="form-group">
+          <label for="input-name">Name</label>
+          <input type="text" class="form-control" id="input-name" aria-describedby="name-help" placeholder="Enter name">
+        </div>
+        <div class="form-group">
+          <label for="input-email">Email</label>
+          <input type="email" class="form-control" id="input-email" aria-describedby="email-help" placeholder="Enter email">
+          <small id="name-help" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+          <label for="input-phone">Phone</label>
+          <input type="tel" class="form-control" id="input-phone" aria-describedby="phone-help" placeholder="Enter phone number">
+          <small id="phone-help" class="form-text text-muted">We'll never share your phone number with anyone else.</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleSelect1">What type of solidarity offer would you like to make?</label>
+          <select class="form-control" id="exampleSelect1">
+            <option>Legal support</option>
+            <option>Solidarity housing</option>
+            <option>Menthal health support</option>
+            <option>Financial support</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+    <div class="col-sm-5">
+    <form>
+      <h2>Make a Solidarity Request</h2>
+      <div class="form-group">
+        <label for="input-name">Name</label>
+        <input type="text" class="form-control" id="input-name" aria-describedby="name-help" placeholder="Enter name">
+      </div>
+      <div class="form-group">
+        <label for="input-email">Email</label>
+        <input type="email" class="form-control" id="input-email" aria-describedby="email-help" placeholder="Enter email">
+        <small id="name-help" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="input-phone">Phone</label>
+        <input type="tel" class="form-control" id="input-phone" aria-describedby="phone-help" placeholder="Enter phone number">
+        <small id="phone-help" class="form-text text-muted">We'll never share your phone number with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="exampleSelect1">What type of solidarity offer would you like to make?</label>
+        <select class="form-control" id="exampleSelect1">
+          <option>Legal support</option>
+          <option>Solidarity housing</option>
+          <option>Menthal health support</option>
+          <option>Financial support</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+    </div>
+  </div>
+  <!-- Footer container  -->
+  <footer>
+    <div class="row container-fluid footer">
+      <div class="footer-content col-sm-12">
+      </div>
+    </div>
+  </footer>
+</body>
+
+
 </html>
