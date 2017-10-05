@@ -86,10 +86,10 @@ const onUpdateRequest = (event) => {
   const rowId = '#request-' + data.request_id
   console.log(data)
   console.log(rowId)
-  api.updateOffer(data)
-    .then(api.showOffer(request))
-    .done(ui.updateOfferSuccess)
-    .fail(ui.updateOfferFail)
+  api.updateRequest(data)
+    .then(api.showRequest(request))
+    .done(ui.updateRequestSuccess)
+    .fail(ui.updateRequestFail)
 }
 
 module.exports = {

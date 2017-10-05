@@ -9,6 +9,7 @@ const signUpSuccess = (data) => {
   $('.sidebar-prompt').text('Created user ' + data.user.email + '. Sign in to get started!')
   $('#register-modal').modal('toggle')
   $('#signin-modal').modal('toggle')
+  $('.user-signup-form')[0].reset()
 }
 
 const signUpFail = () => {
@@ -26,6 +27,7 @@ const signInSuccess = (data) => {
   $('#signin-btn').hide()
   $('#signout-btn').show()
   $('#changepw-btn').show()
+  $('.user-signin-form')[0].reset()
 }
 
 const signInFail = () => {
@@ -39,6 +41,7 @@ const changePasswordSuccess = (data) => {
   console.log('Password successfully changed.')
   $('#changepw-modal').modal('toggle')
   $('#sidebar-prompt').text('Password successfully changed. Signed in as')
+  $('.user-changepw-form')[0].reset()
 }
 
 const changePasswordFail = () => {

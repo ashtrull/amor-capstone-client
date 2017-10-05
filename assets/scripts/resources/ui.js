@@ -8,6 +8,7 @@ const addOfferSuccess = (data) => {
   console.log('Offer submitted!')
   $('#all-offers-table tr:last').after('<tr id="offer-' + data.offer.id + '"><td>' + data.offer.id + '</td><td>' + data.offer.user_id + '</td><td>' + data.offer.offer_type + '</td></tr>')
   $('.center-prompt').text('Thank you for submitting a solidarity request')
+  $('.offer-form')[0].reset()
 }
 
 const addOfferFail = (error) => {
@@ -21,6 +22,7 @@ const addRequestSuccess = (data) => {
   console.log('Request submitted!')
   $('#all-requests-table tr:last').after('<tr id="request-' + data.request.id + '"><td>' + data.request.id + '</td><td>' + data.request.user_id + '</td><td>' + data.request.request_type + '</td></tr>')
   $('.center-prompt').text('Thank you for submitting a solidarity request')
+  $('.request-form')[0].reset()
 }
 
 const addRequestFail = (error) => {
@@ -79,6 +81,7 @@ const deleteOfferSuccess = (rowId) => {
   console.log('ui.js deleteOfferSuccess')
   console.log(rowId)
   $('' + rowId).remove()
+  $('.delete-offer-form')[0].reset()
 }
 
 const deleteOfferFail = (error) => {
@@ -89,6 +92,7 @@ const deleteRequestSuccess = (rowId) => {
   console.log('ui.js deleteRequestSuccess')
   console.log(rowId)
   $('' + rowId).remove()
+  $('.delete-request-form')[0].reset()
 }
 
 const deleteRequestFail = (error) => {
@@ -102,6 +106,7 @@ const updateOfferSuccess = (data) => {
   console.log(rowId)
   $('' + rowId).children().eq(2).empty
   $('' + rowId).children().eq(2).text(data.offer.offer_type)
+  $('.change-offer-form')[0].reset()
 }
 
 const updateOfferFail = (error) => {
@@ -115,6 +120,7 @@ const updateRequestSuccess = (data) => {
   console.log(rowId)
   $('' + rowId).children().eq(2).empty
   $('' + rowId).children().eq(2).text(data.request.request_type)
+  $('.change-request-form')[0].reset()
 }
 
 const updateRequestFail = (error) => {
