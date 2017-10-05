@@ -45,6 +45,10 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   height: 400px;
 }
 
+.center-content {
+  margin: 100px 0px 10px 0px;
+}
+
 button {
   padding: 10px;
   margin: 10px auto;
@@ -64,6 +68,10 @@ table {
 img {
   height: 140px;
   width: 220px;
+}
+
+i {
+  font-size: 18px;
 }
 
 .body.row {

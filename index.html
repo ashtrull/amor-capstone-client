@@ -7,6 +7,7 @@
 
   <!-- Do not add `link` tags-->
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="./assets/font-awesome-4.7.0/css/font-awesome.min.css">
 
   <!-- Do not add `script` tags-->
   <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
@@ -18,42 +19,39 @@
   <!-- Header container -->
   <div class="row container-fluid header">
     <!-- Header (full width) -->
-    <div class="amor-header col-sm-12">
-      <h1>AMORidarity</h1>
-    </div>
   </div>
   <!--Navbar (full width)  -->
   <!-- <div class="row navbar"> -->
   <div class="row">
-  <nav class="navbar navbar-default navbar-right navbar-fixed-top">
-    <div class="amor-header-logo col-sm-3">
+    <nav class="navbar navbar-default navbar-right navbar-fixed-top">
+      <div class="amor-header-logo col-sm-3">
       <img src="https://i.imgur.com/1OEtppp.png?1" alt="AMOR logo">
-    </div>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      </div>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item ">
+            <a class="navlinks home-link" data-id="home-page" id="defaultOpen" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="navlinks about-link" data-id="about-page" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="navlinks contact-link" data-id="contact-page" href="#">Contact</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="navlinks dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Login
           </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Sign Up</a>
-            <a class="dropdown-item" href="#">Sign In</a>
-            <a class="dropdown-item" href="#"></a>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </nav>
-</div>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">Sign Up</a>
+              <a class="dropdown-item" href="#">Sign In</a>
+              <a class="dropdown-item" href="#"></a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
   <!-- </div> -->
   <!-- Body container -->
   <div class="row container-fluid body">
@@ -123,10 +121,14 @@
 
     <!-- Center content -->
     <div class="center-content col-xs-9">
+      <!-- Home page -->
+      <div id="home-page" class="row viewcontent">
+      <h1>Welcome to AMOR!</h1>
+      </div>
       <!-- Resources forms -->
       <!-- Make offer form -->
       <div class="row resource container">
-        <div class="offer-container col-sm-4">
+        <div id="offers-page" class="offer-container col-sm-4 viewcontent">
           <form class="offer-form">
             <h2>Add a Solidarity Offer</h2>
             <div class="form-group">
@@ -187,20 +189,20 @@
           </form>
           <h4>Update an Offer</h4>
           <form class="change-offer-form">
-          <input type="number" name="offer_id" value="" placeholder="Offer ID">
-          <select class="form-control" name="type" id="select-resource-type">
+            <input type="number" name="offer_id" value="" placeholder="Offer ID">
+            <select class="form-control" name="type" id="select-resource-type">
           <option>Legal support</option>
           <option>Solidarity housing</option>
           <option>Mental health support</option>
           <option>Financial support</option>
           <option>Other</option>
           </select>
-          <button type="submit" id="update-offer-btn" name="update-offer-btn" class="btn-success">Update</button>
-      </form>
+            <button type="submit" id="update-offer-btn" name="update-offer-btn" class="btn-success">Update</button>
+          </form>
           <!-- offer form container closed below -->
         </div>
         <!-- Make request form -->
-        <div class="request-container col-sm-4">
+        <div id="requests-page" class="request-container col-sm-4 viewcontent">
           <form class="request-form">
             <h2>Add a Solidarity Request</h2>
             <div class="form-group">
@@ -252,7 +254,7 @@
                 </tbody>
               </table>
             </script>
-              <!-- requests container closed below -->
+            <!-- requests container closed below -->
           </div>
           <!-- Delete request form -->
           <h4>Delete a Request</h4>
@@ -277,16 +279,77 @@
         <!-- resource container closed below -->
       </div>
       <!-- center content closed below -->
+      <div id="about-page" class="row about-page viewcontent">
+        <h2>Mission/Vision/Values<h2>
+          <h3>Vision</h3>
+            <p>The AMOR alliance envisions a world where the community has the power to ensure community sovereignty. Where families are do not fear being separated due to their documentation status and where black and brown communities are able to protect themselves against police violence and immigration raids. The AMOR alliance envisions a world where mental and physical health are the number one measure of community safety. Furthermore we envision a society where individual acts of hate and state sponsored hate are defeated by frontline community resistance.
+            </p>
+          <h3>Mission</h3>
+            <p> We are an alliance of community based grassroots organizations building a community led and controlled structure to mobilize and organize rapid response at the intersections of race, class, gender, sexual orientation, and immigration status to respond to increased instances of individual and state sponsored violence. We work to build a system in which the community can demand accountability, challenge injustice, and access healing after experiencing violence. We are organizing to place sovereignty back into the hands of communities directly affected by systemic oppression and build leadership, generate power, and organize resistance with and alongside all directly affected peoples.
+            </p>
+          <h3>Values</h3>
+            <h4>Healing</h4>
+            <h4>Education</h4>
+            <h4>Resistance</h4>
+            <h4>Sovereignty</h4>
+    </div>
+    <div id="contact-page" class="row viewcontent">
+
+      <div class="contact-form container">
+	       <div class="row">
+      <div class="col-md-6 col-md-offset-1">
+        <div class="well well-sm">
+          <form class="form-horizontal" action="" method="post">
+          <fieldset>
+          <legend>Contact/Contactarnos</legend>
+
+            <!-- Name input-->
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="name">Name</label>
+              <div class="col-md-9">
+                <input id="name" name="name" type="text" placeholder="Your name" class="form-control">
+              </div>
+            </div>
+
+            <!-- Email input-->
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="email">Your E-mail</label>
+              <div class="col-md-9">
+                <input id="email" name="email" type="text" placeholder="Your email" class="form-control">
+              </div>
+            </div>
+
+            <!-- Message body -->
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="message">Your message</label>
+              <div class="col-md-9">
+                <textarea class="form-control" id="message" name="message" placeholder="Please enter your message here..." rows="5"></textarea>
+              </div>
+            </div>
+
+            <!-- Form actions -->
+            <div class="form-group">
+              <div class="col-md-12 text-right">
+                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+              </div>
+            </div>
+          </fieldset>
+          </form>
+        </div>
+      </div>
+	</div>
+</div>
+      <h4>Follow us on Facebook/Síganos en Facebook:</h4>
+      <i class="fa fa-facebook-square fa-lg" aria-hidden="true"></i>
+      <h3>AMOR Network</h3>
+  </div>
     </div>
     <!-- body bs row div closed below -->
   </div>
-    <!-- Footer container closed below -->
-    <footer>
-      <div class="row container-fluid footer">
-        <div class="footer-content col-sm-12">
-        </div>
-      </div>
-    </footer>
+<div class="row container footer">
+  <div class="footer-content col-sm-12">
+  </div>
+</div>
 </body>
 
 
