@@ -27,6 +27,8 @@ const signInSuccess = (data) => {
   $('#signin-btn').hide()
   $('#signout-btn').show()
   $('#changepw-btn').show()
+  $('#show-offers-btn').show()
+  $('#show-requests-btn').show()
   $('.user-signin-form')[0].reset()
 }
 
@@ -54,10 +56,12 @@ const signOutSuccess = (data) => {
   app.user = null
   console.log(data)
   console.log('Successfully signed out!')
-  $('.sidebar-prompt').text('Sign in to create your garden!')
-  $('.signin-btn').show()
-  $('.signout-btn').hide()
-  $('.changepw-btn').hide()
+  $('.sidebar-prompt').text('Sign in to get started!')
+  $('#signin-btn').show()
+  $('#signout-btn').hide()
+  $('#changepw-btn').hide()
+  $('#show-requests-btn').hide()
+  $('#show-offers-btn').hide()
 }
 
 const signOutFail = (error) => {
