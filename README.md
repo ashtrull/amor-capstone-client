@@ -44,7 +44,7 @@ The app was developed in multiple phases:
   
   - I developed some wireframes using wirframe.cc:
   
-  ![Wireframe 1] (https://i.imgur.com/07eV8hz.png)
+  [![Wireframe 1] (https://i.imgur.com/07eV8hz.png)]
   ![Wireframe 2] (https://i.imgur.com/WA3McBs.png)
   ![Wireframe 3] (https://i.imgur.com/7PpVJKg.png)
   ![Wireframe 4] (https://i.imgur.com/7SlnOXh.png)
