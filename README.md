@@ -42,12 +42,12 @@ The app was developed in multiple phases:
 
   [![ERD Diagram](https://i.imgur.com/Kwy61iX.png?1)]
   
-  - I developed some wireframes using wirframe.cc:
+  - I developed some wireframes using wireframe.cc:
   
   [![Wireframe 1] (https://i.imgur.com/07eV8hz.png)]
-  ![Wireframe 2] (https://i.imgur.com/WA3McBs.png)
-  ![Wireframe 3] (https://i.imgur.com/7PpVJKg.png)
-  ![Wireframe 4] (https://i.imgur.com/7SlnOXh.png)
+  [![Wireframe 2] (https://i.imgur.com/WA3McBs.png)]
+  [![Wireframe 3] (https://i.imgur.com/7PpVJKg.png)]
+  [![Wireframe 4] (https://i.imgur.com/7SlnOXh.png)]
   
   
 
