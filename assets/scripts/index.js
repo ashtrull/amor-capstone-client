@@ -17,6 +17,7 @@ $(() => {
   $('#show-admin-panel').hide()
   $('#add-offer-btn').hide()
   $('#add-request-btn').hide()
+  $('#add-resources-container').hide()
   // auth form events
   $('#signout-btn').on('click', authEvents.onSignOut)
   $('.user-signup-form').on('submit', authEvents.onSignUp)

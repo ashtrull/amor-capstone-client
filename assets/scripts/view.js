@@ -18,6 +18,7 @@ function openView (event) {
 
   // Show the current view, and add an "active" class to the button that opened the tab
   document.getElementById(viewName).style.display = 'block'
+  console.log(event.currentTarget.className)
   event.currentTarget.className += ' active'
   console.log('assign active className to navbar item')
 }

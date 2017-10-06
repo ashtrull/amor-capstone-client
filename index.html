@@ -23,7 +23,7 @@
   <!--Navbar (full width)  -->
   <!-- <div class="row navbar"> -->
   <div class="row">
-    <nav class="navbar navbar-default navbar-right navbar-fixed-top">
+    <nav class="navbar">
       <div class="amor-header-logo col-sm-3">
       <img src="https://i.imgur.com/1OEtppp.png?1" alt="AMOR logo">
       </div>
@@ -36,37 +36,39 @@
             <a class="navlinks about-link" data-id="about-page" href="#">About</a>
           </li>
           <li class="nav-item">
+            <a class="navlinks resource-link" data-id="resource-page" href="#">Resources</a>
+          </li>
+          <li class="nav-item">
             <a class="navlinks contact-link" data-id="contact-page" href="#">Contact</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="navlinks dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Login
-          </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Sign Up</a>
-              <a class="dropdown-item" href="#">Sign In</a>
-              <a class="dropdown-item" href="#"></a>
-            </div>
+            <button class="navlinks btn btn-success dropdown-toggle" href="#" id="navbarDropdownMenuLink" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Account<span class="caret"></span>
+          </button>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li class="dropdown-header">New to AMORidarity?</li>
+              <li class="dropdown-item" href="#" data-toggle="modal" data-target="#register-modal">Sign Up</li>
+              <li class="dropdown-header">Registered User</li>
+              <li class="dropdown-item" href="#" data-toggle="modal" data-target="#signin-modal">Sign In</li>
+              <li class="dropdown-item" href="#"></li>
+            </ul>
           </li>
         </ul>
       </div>
     </nav>
   </div>
   <!-- </div> -->
+  <!-- Buffer -->
   <!-- Body container -->
-  <div class="row container-fluid body">
+  <div class="row container body">
     <!-- Sidebar (left)-->
     <div class="sidebar col-sm-3">
-      <br>
-      <br>
-      <br>
-      <br>
-      <h5 class="sidebar-prompt">Administrator Login</h5>
-      <button class="btn-success" id="signin-btn"><a href="#" data-toggle="modal" data-target="#signin-modal">Login</a></button>
+      <h5 class="sidebar-prompt"></h5>
       <button class="btn-success" id="changepw-btn"><a href="#" data-toggle="modal" data-target="#changepw-modal">Change Password</a></button>
       <button class="btn-success" id="signout-btn">Logout</button>
       <!-- Sign in form -->
       <div class="modal fade" id="signin-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
         <div class="modal-dialog">
           <div class="loginmodal-container">
             <h3>Login to Your Account</h3><br>
@@ -85,10 +87,10 @@
         <!-- sign in modal closed below -->
       </div>
       <!-- Sign up form -->
-      <div class="modal fade" id="register-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+      <div class="modal" id="register-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
         <div class="modal-dialog">
           <div class="loginmodal-container">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
             <h3>Sign up!</h3>
             <form class="user-signup-form">
               <input type="text" name="credentials[email]" value="" placeholder="Email">
@@ -131,12 +133,13 @@
     <div class="center-content col-xs-9">
       <!-- Home page -->
       <div id="home-page" class="row viewcontent">
-      <h1>Welcome to AMOR!</h1>
+      <h1>Welcome to AMORidarity!</h1>
+      <h2>Sharing resources as a community to demand accountability, challenge injustice, and access healing after experiencing violence.<h2>
       </div>
-      <!-- Resources forms -->
-      <!-- Make offer form -->
-      <div class="row resource container">
-        <div id="offers-page" class="offer-container col-sm-4 viewcontent">
+      <!-- Resource Page -->
+      <!-- Offer page -->
+    <div id="resource-page"class="row viewcontent">
+        <div id="offers-page" class="resource-container col-sm-5">
           <form class="offer-form">
             <h2>Add a Solidarity Offer</h2>
             <div class="form-group">
@@ -190,13 +193,13 @@
             </script>
           </div>
           <!-- Delete offer form -->
-          <h4>Delete an Offer</h4>
-          <form class="delete-offer-form">
+          <form class="delete-offer-form hidden">
+            <h4>Delete an Offer</h4>
             <input type="number" name="offer_id" value="" placeholder="Offer ID"><br>
             <button type="submit" id="delete-offer-btn" name="delete-offer-btn" class="btn-success">Delete</button>
           </form>
-          <h4>Update an Offer</h4>
-          <form class="change-offer-form">
+          <form class="change-offer-form hidden">
+            <h4>Update an Offer</h4>
             <input type="number" name="offer_id" value="" placeholder="Offer ID">
             <select class="form-control" name="type" id="select-resource-type">
           <option>Legal support</option>
@@ -207,10 +210,10 @@
           </select>
             <button type="submit" id="update-offer-btn" name="update-offer-btn" class="btn-success">Update</button>
           </form>
+          </div>
           <!-- offer form container closed below -->
-        </div>
         <!-- Make request form -->
-        <div id="requests-page" class="request-container col-sm-4 viewcontent">
+        <div id="requests-page" class="resource-container col-sm-5">
           <form class="request-form">
             <h2>Add a Solidarity Request</h2>
             <div class="form-group">
@@ -265,13 +268,13 @@
             <!-- requests container closed below -->
           </div>
           <!-- Delete request form -->
-          <h4>Delete a Request</h4>
-          <form class="delete-request-form">
+          <form class="delete-request-form hidden">
+            <h4>Delete a Request</h4>
             <input type="number" name="request_id" value="" placeholder="Request ID"><br>
             <button type="submit" id="delete-request-btn" name="delete-request-btn" class="btn-success">Delete</button>
           </form>
-          <h4>Update a Request</h4>
-          <form class="change-request-form">
+          <form class="change-request-form hidden">
+            <h4>Update a Request</h4>
             <input type="number" name="request_id" value="" placeholder="Request ID">
             <select class="form-control" name="type" id="select-resource-type">
             <option>Legal support</option>
@@ -288,7 +291,8 @@
       </div>
       <!-- center content closed below -->
       <div id="about-page" class="row about-page viewcontent">
-        <h2>Mission/Vision/Values<h2>
+        <div class="about-page-content">
+        <h2>Mission/Vision/Values</h2>
           <h3>Vision</h3>
             <p>The AMOR alliance envisions a world where the community has the power to ensure community sovereignty. Where families are do not fear being separated due to their documentation status and where black and brown communities are able to protect themselves against police violence and immigration raids. The AMOR alliance envisions a world where mental and physical health are the number one measure of community safety. Furthermore we envision a society where individual acts of hate and state sponsored hate are defeated by frontline community resistance.
             </p>
@@ -300,6 +304,7 @@
             <h4>Education</h4>
             <h4>Resistance</h4>
             <h4>Sovereignty</h4>
+          </div>
     </div>
     <div id="contact-page" class="row viewcontent">
 
@@ -354,8 +359,8 @@
     </div>
     <!-- body bs row div closed below -->
   </div>
-<div class="row container footer">
-  <div class="footer-content col-sm-12">
+<div class="footer">
+  <div class="footer-content">
   </div>
 </div>
 </body>
