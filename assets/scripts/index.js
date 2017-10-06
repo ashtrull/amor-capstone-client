@@ -25,11 +25,7 @@ $(() => {
   $('.user-changepw-form').on('submit', authEvents.onChangePassword)
   // resource form events
   $('.show-admin-panel').on('click', function () {
-    $('#show-offers-btn').show()
-    $('#show-requests-btn').show()
-    // $('#show-matches-btn').show()
-    $('#add-offer-btn').show()
-    $('#add-request-btn').show()
+    $('#resource-page').click()
   })
   $('#add-offer-btn').on('click', function () {
     $('.offer-form').show()

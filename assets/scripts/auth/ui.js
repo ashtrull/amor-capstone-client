@@ -30,6 +30,10 @@ const signInSuccess = (data) => {
   $('.user-signin-form')[0].reset()
   if (data.user.admin === true) {
     $('#show-admin-panel').show()
+    $('.delete-offer-form').removeClass('hidden')
+    $('.change-offer-form').removeClass('hidden')
+    $('.delete-request-form').removeClass('hidden')
+    $('.change-request-form').removeClass('hidden')
   } else {
     $('#add-offer-btn').show()
     $('#add-request-btn').show()
