@@ -44,10 +44,10 @@ The app was developed in multiple phases:
   
   - I developed some wireframes using wirframe.cc:
   
-  ![Wireframe 1] (https://wireframe.cc/pro/pp/a2fb21cc6113888)
-  ![Wireframe 2] (https://wireframe.cc/pro/pp/a2fb21cc6113888#aaqyaw8u)
-  ![Wireframe 3] (https://wireframe.cc/pro/pp/a2fb21cc6113888#4kt66tmk)
-  ![Wireframe 4] (https://wireframe.cc/pro/pp/a2fb21cc6113888#g8favoaw)
+  ![Wireframe 1] (https://i.imgur.com/07eV8hz.png)
+  ![Wireframe 2] (https://i.imgur.com/WA3McBs.png)
+  ![Wireframe 3] (https://i.imgur.com/7PpVJKg.png)
+  ![Wireframe 4] (https://i.imgur.com/7SlnOXh.png)
   
   
 
