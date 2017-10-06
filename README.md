@@ -1,7 +1,9 @@
 [![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
 
 # AMORidarity
-This AMORidarity app was developed through the Web Development Immersive at General Assembly. The site uses HTML, CSS, Javascript, and Ruby on Rails as well as Bootstrap and Handlebars frameworks to create a resource app that helps community organizers match solidarity requests with solidarity offers.
+Sharing resources as a community to demand accountability, challenge injustice, and access healing after experiencing violence.
+
+AMORidarity was developed through the Web Development Immersive at General Assembly. The site uses HTML, CSS, Javascript, and Ruby on Rails as well as Bootstrap and Handlebars frameworks to create a resource app that helps community organizers match solidarity requests with solidarity offers.
 
 
 ## My Goals
@@ -49,7 +51,7 @@ The app was developed in multiple phases:
   [![Wireframe 3] (https://i.imgur.com/7PpVJKg.png)]
   [![Wireframe 4] (https://i.imgur.com/7SlnOXh.png)]
   
-  
+  TRELLO!!
 
 2. Back-end Development
   - Built scaffold for all the different objects in the app: users, requests, offers, and matches. The scaffold includes building a route, controller, model, and serializer for each.
