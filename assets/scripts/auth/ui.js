@@ -27,13 +27,18 @@ const signInSuccess = (data) => {
   $('#signin-btn').hide()
   $('#signout-btn').show()
   $('#changepw-btn').show()
-  $('#show-offers-btn').show()
-  $('#show-requests-btn').show()
   $('.user-signin-form')[0].reset()
+  if (data.user.admin === true) {
+    $('#show-admin-panel').show()
+  } else {
+    $('#add-offer-btn').show()
+    $('#add-request-btn').show()
+  }
 }
 
 const signInFail = () => {
   console.log('Email/password combination not found')
+  $('.sidebar-prompt').text('Email/password combination not found')
   $('#signin-modal').modal('toggle')
   $('#sign-in-prompt').text('Email/password combination not found')
 }
@@ -41,14 +46,15 @@ const signInFail = () => {
 const changePasswordSuccess = (data) => {
   // app.user = data.user
   console.log('Password successfully changed.')
+  console.log(data)
   $('#changepw-modal').modal('toggle')
-  $('#sidebar-prompt').text('Password successfully changed. Signed in as')
+  $('.sidebar-prompt').text('Password successfully changed. Signed in as ' + app.user.email)
   $('.user-changepw-form')[0].reset()
 }
 
 const changePasswordFail = () => {
-  console.log('Email/password combination not found')
-  $('.changepw-modal').modal('toggle')
+  console.log('Incorrect old password. Please try again.')
+  $('#changepw-modal').modal('toggle')
   $('.sidebar-prompt').text('Email/password combination not found')
 }
 

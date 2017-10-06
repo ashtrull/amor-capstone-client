@@ -14,12 +14,28 @@ $(() => {
   $('#user-logout').hide()
   $('#show-offers-btn').hide()
   $('#show-requests-btn').hide()
+  $('#show-admin-panel').hide()
+  $('#add-offer-btn').hide()
+  $('#add-request-btn').hide()
   // auth form events
   $('#signout-btn').on('click', authEvents.onSignOut)
   $('.user-signup-form').on('submit', authEvents.onSignUp)
   $('.user-signin-form').on('submit', authEvents.onSignIn)
   $('.user-changepw-form').on('submit', authEvents.onChangePassword)
   // resource form events
+  $('.show-admin-panel').on('click', function () {
+    $('#show-offers-btn').show()
+    $('#show-requests-btn').show()
+    // $('#show-matches-btn').show()
+    $('#add-offer-btn').show()
+    $('#add-request-btn').show()
+  })
+  $('#add-offer-btn').on('click', function () {
+    $('.offer-form').show()
+  })
+  $('#add-request-btn').on('click', function () {
+    $('.request-form').show()
+  })
   $('.offer-form').on('submit', resourceEvents.onMakeOffer)
   $('.request-form').on('submit', resourceEvents.onMakeRequest)
   $('#show-requests-btn').on('click', resourceEvents.onGetRequests)

@@ -57,6 +57,10 @@
   <div class="row container-fluid body">
     <!-- Sidebar (left)-->
     <div class="sidebar col-sm-3">
+      <br>
+      <br>
+      <br>
+      <br>
       <h5 class="sidebar-prompt">Administrator Login</h5>
       <button class="btn-success" id="signin-btn"><a href="#" data-toggle="modal" data-target="#signin-modal">Login</a></button>
       <button class="btn-success" id="changepw-btn"><a href="#" data-toggle="modal" data-target="#changepw-modal">Change Password</a></button>
@@ -103,8 +107,8 @@
           <div class="changepw-modal-container">
             <h1>Change Password</h1><br>
             <form class="user-changepw-form">
-              <input type="password" name="credentials[password]" value="" placeholder="Password">
-              <input type="password" name="credentials[newpassword]" value="" placeholder="Confirm Password">
+              <input type="password" name="credentials[password]" value="" placeholder="Old Password">
+              <input type="password" name="credentials[newpassword]" value="" placeholder="New Password">
               <button type="submit" id="changepw-submit-btn" name="changepw-btn" class="btn-success changepw changepwmodal-submit" value="Change Password">Change Password</button>
             </form>
           </div>
@@ -113,8 +117,12 @@
         <!-- changepwd modal closed below -->
       </div>
       <div>
+        <button class="btn-success" id="show-admin-panel">Show Admin Panel</button>
         <button class="btn-success" id="show-requests-btn">Show All Requests</button>
         <button class="btn-success" id="show-offers-btn">Show All Offers</button>
+        <button class="btn-success" id="add-offer-btn">Add an Offer</button>
+        <button class="btn-success" id="add-request-btn">Add a Request</button>
+
       </div>
       <!-- sidebar closed below -->
     </div>
