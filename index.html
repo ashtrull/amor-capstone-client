@@ -23,7 +23,7 @@
   <!--Navbar (full width)  -->
   <!-- <div class="row navbar"> -->
   <div class="row">
-    <nav class="navbar navbar-default navbar-right navbar-fixed-top">
+    <nav class="navbar">
       <div class="amor-header-logo col-sm-3">
       <img src="https://i.imgur.com/1OEtppp.png?1" alt="AMOR logo">
       </div>
@@ -42,34 +42,36 @@
             <a class="navlinks contact-link" data-id="contact-page" href="#">Contact</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="navlinks dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Login
-          </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Sign Up</a>
-              <a class="dropdown-item" href="#">Sign In</a>
-              <a class="dropdown-item" href="#"></a>
-            </div>
+            <button class="navlinks btn btn-success dropdown-toggle" href="#" id="navbarDropdownMenuLink" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Account<span class="caret"></span>
+          </button>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li class="dropdown-header">New to AMORidarity?</li>
+              <li class="dropdown-item" href="#" data-toggle="modal" data-target="#register-modal">Sign Up</li>
+              <li class="dropdown-header">Registered User</li>
+              <li class="dropdown-item" href="#" data-toggle="modal" data-target="#signin-modal">Sign In</li>
+              <li class="dropdown-item" href="#"></li>
+            </ul>
           </li>
         </ul>
       </div>
     </nav>
   </div>
   <!-- </div> -->
+  <!-- Buffer -->
+  <div class="buffer" id="buffer-div">
+  </div>
   <!-- Body container -->
-  <div class="row container-fluid body">
+  <div class="row container body">
     <!-- Sidebar (left)-->
     <div class="sidebar col-sm-3">
-      <br>
-      <br>
-      <br>
-      <br>
-      <h5 class="sidebar-prompt">Administrator Login</h5>
+      <h5 class="sidebar-prompt"></h5>
       <button class="btn-success" id="signin-btn"><a href="#" data-toggle="modal" data-target="#signin-modal">Login</a></button>
       <button class="btn-success" id="changepw-btn"><a href="#" data-toggle="modal" data-target="#changepw-modal">Change Password</a></button>
       <button class="btn-success" id="signout-btn">Logout</button>
       <!-- Sign in form -->
       <div class="modal fade" id="signin-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
         <div class="modal-dialog">
           <div class="loginmodal-container">
             <h3>Login to Your Account</h3><br>
@@ -88,10 +90,10 @@
         <!-- sign in modal closed below -->
       </div>
       <!-- Sign up form -->
-      <div class="modal fade" id="register-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+      <div class="modal" id="register-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
         <div class="modal-dialog">
           <div class="loginmodal-container">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
             <h3>Sign up!</h3>
             <form class="user-signup-form">
               <input type="text" name="credentials[email]" value="" placeholder="Email">
@@ -136,9 +138,14 @@
       <div id="home-page" class="row viewcontent">
       <h1>Welcome to AMOR!</h1>
       </div>
-      <!-- Resources forms -->
-      <!-- Make offer form -->
-      <div id="resource-page"class="viewcontent resource container">
+      <!-- Resource Page -->
+      <div id="resource-page"class="row viewcontent">
+        <div id="add-resources-container" style="position: absolute; left: 30%; top: 20%;">
+          <button class="btn-success" id="add-offers-btn" style="margin: 20px 20px">Add an Offer</button>
+          <button class="btn-success" id="add-requests-btn" style="margin: 20px 20px">Add a Request</button>
+        </div>
+      </div>
+      <!-- Offer page -->
         <div id="offers-page" class="offer-container col-sm-4 viewcontent">
           <form class="offer-form">
             <h2>Add a Solidarity Offer</h2>
@@ -357,8 +364,8 @@
     </div>
     <!-- body bs row div closed below -->
   </div>
-<div class="row container footer">
-  <div class="footer-content col-sm-12">
+<div class="footer">
+  <div class="footer-content">
   </div>
 </div>
 </body>
