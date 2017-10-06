@@ -13,7 +13,8 @@ const signUp = function (data) {
       'credentials': {
         'email': data.credentials.email,
         'password': data.credentials.password,
-        'password_confirmation': data.credentials.password
+        'password_confirmation': data.credentials.password,
+        'admin': false
       }
     }
   })
