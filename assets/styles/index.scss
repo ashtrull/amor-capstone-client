@@ -21,8 +21,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 }
 
 .nav-item {
-  padding: 10px 10px;
-  margin: 40px 20px;
+  margin: 40px 10px;
   font-size: 18px;
 }
 
@@ -43,12 +42,7 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   }
 }
 
-.sidebar {
-  background-color: orange;
-  height: 500px;
-  width: 200px;
-  text-align: center;
-}
+
 
 .modal-dialog {
   position: absolute;
@@ -84,9 +78,9 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   margin: 100px 0px 10px 0px;
 }
 
-.hidden {
-  display: none;
-}
+// .hidden {
+//   display: none;
+// }
 
 .about-page-content {
   padding: 10px;
@@ -104,6 +98,7 @@ button {
 a {
   color: white;
 }
+
 
 table {
   padding: 10px;
@@ -126,5 +121,44 @@ h1 {
 }
 
 h2 {
+  text-align: center;
+}
+
+@media all and (min-width: 960px) {
+  h1 {
+    font-size: 36px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+}
+
+@media all and (max-width: 959px) and (min-width: 600px) {
+  h1 {
+    font-size: 24px;
+  }
+  h2 {
+    font-size: 18px;
+  }
+}
+@media all and (max-width: 599px) and (min-width: 0) {
+  h1 {
+    font-size: 18px;
+  }
+  h2 {
+    font-size: 12px;
+  }
+}
+
+.center-content {
+}
+
+.container.body {
+}
+
+.sidebar {
+  background-color: orange;
+  height: 500px;
+  width: 15%;
   text-align: center;
 }
