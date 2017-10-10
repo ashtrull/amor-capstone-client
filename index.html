@@ -22,12 +22,52 @@
   </div>
   <!--Navbar (full width)  -->
   <!-- <div class="row navbar"> -->
-  <div class="row">
+  <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+          <img src="https://i.imgur.com/1OEtppp.png?1" alt="AMOR logo">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a class="nav-item navlinks home-link" data-id="home-page" id="defaultOpen" href="#">Home</a></li>
+                <li><a class="nav-item navlinks about-link" data-id="about-page" href="#">About</a></li>
+                <li><a class="nav-item navlinks resource-link" data-id="resource-page" href="#">Resources</a></li>
+                <li>  <a class="nav-item navlinks contact-link" data-id="contact-page" href="#">Contact</a></li>
+                <li><button class="nav-item navlinks btn btn-success dropdown-toggle" href="#" id="navbarDropdownMenuLink" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Account<span class="caret"></span>
+              </button>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li class="dropdown-header">New to AMORidarity?</li>
+                  <li class="dropdown-item" href="#" data-toggle="modal" data-target="#register-modal">Sign Up</li>
+                  <li class="dropdown-header">Registered User</li>
+                  <li class="dropdown-item" href="#" data-toggle="modal" data-target="#signin-modal">Sign In</li>
+                  <li class="dropdown-item" href="#"></li>
+                </ul></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+  <!-- <div class="row">
     <nav class="navbar">
-      <div class="amor-header-logo col-sm-3">
-      <img src="https://i.imgur.com/1OEtppp.png?1" alt="AMOR logo">
+
+      <div class="container">
+      <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
       </div>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="navbar-nav">
           <li class="nav-item ">
             <a class="navlinks home-link" data-id="home-page" id="defaultOpen" href="#">Home</a>
@@ -55,14 +95,15 @@
           </li>
         </ul>
       </div>
+    </div>
     </nav>
-  </div>
+  </div> -->
   <!-- </div> -->
   <!-- Buffer -->
   <!-- Body container -->
-  <div class="row container body">
-    <!-- Sidebar (left)-->
-    <div class="sidebar col-sm-3">
+  <div class="row container body col-sm-12">
+    <!-- ar (left)-->
+    <div class="sidebar col-xs-2">
       <h5 class="sidebar-prompt"></h5>
       <button class="btn-success" id="changepw-btn"><a href="#" data-toggle="modal" data-target="#changepw-modal">Change Password</a></button>
       <button class="btn-success" id="signout-btn">Logout</button>
@@ -130,7 +171,7 @@
     </div>
 
     <!-- Center content -->
-    <div class="center-content col-xs-9">
+    <div class="center-content col-xs-7">
       <!-- Home page -->
       <div id="home-page" class="row viewcontent">
       <h1>Welcome to AMORidarity!</h1>
@@ -359,7 +400,7 @@
     </div>
     <!-- body bs row div closed below -->
   </div>
-<div class="footer">
+<div class="footer col-xs-12">
   <div class="footer-content">
   </div>
 </div>
