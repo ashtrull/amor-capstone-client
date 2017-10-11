@@ -28,7 +28,7 @@ const addRequestSuccess = (data) => {
 const addRequestFail = (error) => {
   console.log(error)
   console.log('Could not submit request')
-  $('#center-prompt').text(Sorry, something went wrong. Please try again!')
+  $('#center-prompt').text('Sorry, something went wrong. Please try again!')
 }
 const getOffersSuccess = (data) => {
   console.log('ui.js getOffersSuccess')
