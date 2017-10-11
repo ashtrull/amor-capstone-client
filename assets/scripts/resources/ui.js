@@ -7,28 +7,28 @@ const addOfferSuccess = (data) => {
   console.log(data)
   console.log('Offer submitted!')
   $('#all-offers-table tr:last').after('<tr id="offer-' + data.offer.id + '"><td>' + data.offer.id + '</td><td>' + data.offer.user_id + '</td><td>' + data.offer.offer_type + '</td></tr>')
-  $('#center-prompt').text('<b color="blue">Thank you for submitting a solidarity request</b>')
+  $('#center-prompt').text('Thank you for submitting a solidarity request')
   $('.offer-form')[0].reset()
 }
 
 const addOfferFail = (error) => {
   console.log(error)
   console.log('Could not submit offer')
-  $('#center-prompt').text('<b color="red">Sorry, something went wrong. Please try again!</b>')
+  $('#center-prompt').text('Sorry, something went wrong. Please try again!')
 }
 
 const addRequestSuccess = (data) => {
   console.log(data)
   console.log('Request submitted!')
   $('#all-requests-table tr:last').after('<tr id="request-' + data.request.id + '"><td>' + data.request.id + '</td><td>' + data.request.user_id + '</td><td>' + data.request.request_type + '</td></tr>')
-  $('#center-prompt').text('<b color="green">Thank you for submitting a solidarity request</b>')
+  $('#center-prompt').text('Thank you for submitting a solidarity request')
   $('.request-form')[0].reset()
 }
 
 const addRequestFail = (error) => {
   console.log(error)
   console.log('Could not submit request')
-  $('#center-prompt').text('<b color="red">Sorry, something went wrong. Please try again!</b>')
+  $('#center-prompt').text(Sorry, something went wrong. Please try again!')
 }
 const getOffersSuccess = (data) => {
   console.log('ui.js getOffersSuccess')
