@@ -9,17 +9,29 @@ const viewEvents = require('./view.js')
 $(() => {
   setAPIOrigin(location, config)
   // on page load
-  $('#changepw-btn').hide()
-  $('#signout-btn').hide()
-  $('#user-logout').hide()
+  $('.logged-in').hide()
+  $('.logged-out').show()
   $('#show-offers-btn').hide()
   $('#show-requests-btn').hide()
+  $('#show-admin-panel').hide()
+  $('#add-offer-btn').hide()
+  $('#add-request-btn').hide()
+  $('#add-resources-container').hide()
   // auth form events
   $('#signout-btn').on('click', authEvents.onSignOut)
   $('.user-signup-form').on('submit', authEvents.onSignUp)
   $('.user-signin-form').on('submit', authEvents.onSignIn)
   $('.user-changepw-form').on('submit', authEvents.onChangePassword)
   // resource form events
+  $('.show-admin-panel').on('click', function () {
+    $('#resource-page').click()
+  })
+  $('#add-offer-btn').on('click', function () {
+    $('.offer-form').show()
+  })
+  $('#add-request-btn').on('click', function () {
+    $('.request-form').show()
+  })
   $('.offer-form').on('submit', resourceEvents.onMakeOffer)
   $('.request-form').on('submit', resourceEvents.onMakeRequest)
   $('#show-requests-btn').on('click', resourceEvents.onGetRequests)
@@ -31,6 +43,19 @@ $(() => {
   // navbar events
   $('.navlinks').on('click', viewEvents.openView)
   $('#defaultOpen').click()
+  // Collapse accordion every time dropdown is shown
+  $('.dropdown-accordion').on('show.bs.dropdown', function (event) {
+    const accordion = $(this).find($(this).data('accordion'))
+    accordion.find('.panel-collapse.in').collapse('hide')
+  })
+
+  // Prevent dropdown to be closed when we click on an accordion link
+  $('.dropdown-accordion').on('click', 'a[data-toggle="collapse"]', function (event) {
+    event.preventDefault()
+    event.stopPropagation()
+    $($(this).data('parent')).find('.panel-collapse.in').collapse('hide')
+    $($(this).attr('href')).collapse('show')
+  })
 })
 
 module.exports = {

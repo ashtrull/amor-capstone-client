@@ -5,29 +5,68 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   width: 150px;
 }
 
-.header {
-  background-color: red;
-  text-align: center;
-  width: 100%;
+#add-resources-container {
+  height: 300px;
+  margin: 10% auto;
+  background-color: black;
 }
 
-.navbar {
+// #buffer-div {
+//   height: 100px;
+// }
+
+#main-nav {
   background-color: black;
-  margin-left: 0;
-  width: 100%;
 }
+
+@media (min-width: 992px) {
+  .navbar {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
+    -moz-transition: padding-top 0.3s, padding-bottom 0.3s;
+    transition: padding-top 0.3s, padding-bottom 0.3s; }
+  }
 
 .nav-item {
-  padding: 10px 50px;
-  margin: 40px 20px;
+  margin: 40px 10px;
   font-size: 18px;
-
 }
 
-.sidebar {
-  background-color: orange;
-  height: 500px;
-  text-align: center;
+.dropdown-item {
+  display: inline-block;
+  margin-left:   0.5em;
+  margin-right:  0.5em;
+  position: relative;
+  padding-bottom: 10px;
+  a{
+    color: #333;
+  }
+  &:hover .menu-submenu{
+    display: block;
+  }
+  &:hover > a{
+    color: #4F8EF7;
+  }
+}
+
+
+
+.modal-dialog {
+  position: absolute;
+  background-color: white;
+  padding: auto auto;
+  z-index: 10040;
+  overflow: auto;
+  overflow-y: auto;
+}
+
+.modal {
+  background-color: white;
+  width: 600px;
+  height: 300px;
+  left: 25%;
+  top: 25%;
 }
 
 .body {
@@ -37,16 +76,26 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 .footer {
   background-color: black;
   height: 100px;
-}
-
-.modal {
-  background-color: black;
-  width: 600px;
-  height: 400px;
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .center-content {
-  margin: 100px 0px 10px 0px;
+  margin: 10px 10px 10px 10px;
+}
+
+// .hidden {
+//   display: none;
+// }
+
+.about-page-content {
+  padding: 10px;
+}
+
+.resource-container {
+  margin: 20px;
 }
 
 button {
@@ -58,6 +107,7 @@ a {
   color: white;
 }
 
+
 table {
   padding: 10px;
   margin: 10px;
@@ -66,15 +116,58 @@ table {
 }
 
 img {
-  height: 140px;
-  width: 220px;
+  height: 80px;
+  width: 140px;
 }
 
 i {
   font-size: 18px;
 }
 
-.body.row {
-  margin: 100px 0px 0px 0px;
-  position: relative;
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+@media all and (min-width: 960px) {
+  h1 {
+    font-size: 36px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+}
+
+@media all and (max-width: 959px) and (min-width: 600px) {
+  h1 {
+    font-size: 24px;
+  }
+  h2 {
+    font-size: 18px;
+  }
+}
+@media all and (max-width: 599px) and (min-width: 0) {
+  h1 {
+    font-size: 18px;
+  }
+  h2 {
+    font-size: 12px;
+  }
+}
+
+.center-content {
+}
+
+.container.body {
+  padding-left: 30px;
+}
+
+.sidebar {
+  background-color: orange;
+  height: 500px;
+  width: 15%;
+  text-align: center;
 }
