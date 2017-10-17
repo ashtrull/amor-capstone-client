@@ -52,8 +52,7 @@ const changePassword = function (data) {
   })
 }
 
-const signOut = (data) => {
-  console.log(data)
+const signOut = () => {
   return $.ajax({
     url: app.host + '/sign-out/' + app.user.id,
     method: 'DELETE',
