@@ -40,6 +40,14 @@ $(() => {
   $('.delete-request-form').on('submit', resourceEvents.onDeleteRequest)
   $('.change-offer-form').on('submit', resourceEvents.onUpdateOffer)
   $('.change-request-form').on('submit', resourceEvents.onUpdateRequest)
+  $('#show-offer-form-btn').on('click', function () {
+    $('.offer-form').removeClass('hidden')
+    $('.request-form').addClass('hidden')
+  })
+  $('#show-request-form-btn').on('click', function () {
+    $('.request-form').removeClass('hidden')
+    $('.offer-form').addClass('hidden')
+  })
   // navbar events
   $('.navlinks').on('click', viewEvents.openView)
   $('#defaultOpen').click()

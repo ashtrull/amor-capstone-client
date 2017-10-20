@@ -19,7 +19,7 @@
   <!--Navbar (full width)  -->
   <nav class="navbar navbar-toggleable-md navbar-light md-faded navbar-fixed-top" id="main-nav"role="navigation">
     <div class="container">
-      <a href="#" class="navbar-brand"><img src="https://i.imgur.com/1OEtppp.png?1" id="amor-logo" alt="AMOR logo"></a>
+      <a href="#" class="navbar-brand nav-item navlinks home-link" data-id="home-page" id="defaultOpen"><img src="https://i.imgur.com/rg9tLht.png" id="amor-logo" alt="AMOR logo"></a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse-1">
               <span class="navbar-toggler-icon"></span>
@@ -148,16 +148,22 @@
       <!-- Home page -->
       <div id="home-page" class="row viewcontent">
       <h1>Welcome to AMORidarity!</h1>
-      <img id="home-img" src="http://www.rifuture.org/wp-content/uploads/2017-10-01-M4RJ-RI-35-768x768.jpg" alt="AMOR: 'No human being is illegal'">
-      <h2>Sharing resources as a community to demand accountability, challenge injustice, and access healing after experiencing violence.<h2>
+      <h2>A project of:</h2>
+      <img id="home-img" src="https://i.imgur.com/1OEtppp.png?1" alt="AMOR">
+      <h3>Sharing resources as a community to demand accountability, challenge injustice, and access healing after experiencing violence.<h3>
       </div>
       <!-- Resource Page -->
       <!-- Offer page -->
-    <div id="resource-page"class="row viewcontent">
+    <div id="resource-page"class="viewcontent">
+
       <h2>Resources</h2>
-      <div id="center-prompt"></div>
-        <div id="offers-page" class="resource-container col-sm-5">
-          <form class="offer-form">
+      <div class="row form-buttons">
+        <button id="show-offer-form-btn" class="form-show-btn btn btn-success col-md-4">Make a Solidarity Offer</button>
+        <button id="show-request-form-btn"  class="form-show-btn btn btn-success col-md-4">Make a Solidarity Request</button>
+      </div>
+      <div class="" id="center-prompt"></div>
+        <div id="offers-page" class="row resource-container">
+          <form class="hidden offer-form">
             <h2>Add a Solidarity Offer</h2>
             <div class="form-group">
               <label for="input-name">Name</label>
@@ -230,8 +236,8 @@
           </div>
           <!-- offer form container closed below -->
         <!-- Make request form -->
-        <div id="requests-page" class="resource-container col-sm-5">
-          <form class="request-form">
+        <div id="requests-page" class="resource-container">
+          <form class="hidden request-form">
             <h2>Add a Solidarity Request</h2>
             <div class="form-group">
               <label for="input-name">Name</label>
