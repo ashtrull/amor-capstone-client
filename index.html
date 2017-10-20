@@ -16,35 +16,28 @@
 <!-- Page body -->
 
 <body class="container">
-  <!-- Header container -->
-  <div class="row container-fluid header">
-    <!-- Header (full width) -->
-  </div>
   <!--Navbar (full width)  -->
-  <!-- <div class="row navbar"> -->
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="main-nav"role="navigation">
+  <nav class="navbar navbar-toggleable-md navbar-light md-faded navbar-fixed-top" id="main-nav"role="navigation">
     <div class="container">
-        <div class="navbar-header">
-          <img src="https://i.imgur.com/1OEtppp.png?1" alt="AMOR logo">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+      <a href="#" class="navbar-brand"><img src="https://i.imgur.com/1OEtppp.png?1" id="amor-logo" alt="AMOR logo"></a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse-1">
+              <span class="navbar-toggler-icon"></span>
             </button>
-        </div>
+
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li><a class="nav-item navlinks home-link" data-id="home-page" id="defaultOpen" href="#">Home</a></li>
-                <li><a class="nav-item navlinks about-link" data-id="about-page" href="#">About</a></li>
-                <li><a class="nav-item navlinks resource-link" data-id="resource-page" href="#">Resources</a></li>
-                <li><a class="nav-item navlinks contact-link" data-id="contact-page" href="#">Contact</a></li>
-                <li><div class="dropdown dropdown-accordion" data-accordion="#accordion">
-                <a class="nav-item navlinks btn btn-success dropdown-toggle" href="#" id="account-dropdown-menu-btn" data-toggle="dropdown" aria-haspopup="true">
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+            <ul class="nav navbar-nav mr-auto">
+                <li><a class="nav-item nav-link navlinks home-link" data-id="home-page" id="defaultOpen" href="#">Home</a></li>
+                <li><a class="nav-item nav-link navlinks about-link" data-id="about-page" href="#">About</a></li>
+                <li><a class="nav-item nav-link navlinks resource-link" data-id="resource-page" href="#">Resources</a></li>
+                <li><a class="nav-item nav-link navlinks contact-link" data-id="contact-page" href="#">Contact</a></li>
+                <li id="account-dropdown"><div class="dropdown dropdown-accordion" data-accordion="#accordion">
+                <a style="color:white;" class="nav-item nav-link dropdown-toggle" href="#" id="account-dropdown-menu-btn" data-toggle="dropdown" aria-haspopup="true">
                 Account <span class="caret"></span>
               </a>
+
               <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
                 <li>
                 <div class="panel-group" id="accordion">
@@ -155,6 +148,7 @@
       <!-- Home page -->
       <div id="home-page" class="row viewcontent">
       <h1>Welcome to AMORidarity!</h1>
+      <img id="home-img" src="http://www.rifuture.org/wp-content/uploads/2017-10-01-M4RJ-RI-35-768x768.jpg" alt="AMOR: 'No human being is illegal'">
       <h2>Sharing resources as a community to demand accountability, challenge injustice, and access healing after experiencing violence.<h2>
       </div>
       <!-- Resource Page -->
@@ -313,7 +307,7 @@
         <!-- resource container closed below -->
       </div>
       <!-- center content closed below -->
-      <div id="about-page" class="row about-page viewcontent">
+      <div id="about-page" class="about-page viewcontent">
         <div class="about-page-content">
         <h2>Mission/Vision/Values</h2>
           <h3>Vision</h3>

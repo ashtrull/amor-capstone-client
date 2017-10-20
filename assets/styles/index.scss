@@ -1,6 +1,20 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+#amor-logo {
+  float:left;
+}
+
+#home-img {
+  height: 400px;
+  width: 540px;
+  margin: 10px auto;
+}
+
+.clearfix {
+  overflow: auto;
+}
+
 #select-resource-type {
   width: 150px;
 }
@@ -19,18 +33,36 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   background-color: black;
 }
 
-@media (min-width: 992px) {
-  .navbar {
+#account-dropdown {
+  padding: 15px;
+  margin: 20px 10px;
+}
+
+@media (min-width: 960px) {
+  #main-nav {
     padding-top: 25px;
     padding-bottom: 25px;
     -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
     -moz-transition: padding-top 0.3s, padding-bottom 0.3s;
-    transition: padding-top 0.3s, padding-bottom 0.3s; }
+    transition: padding-top 0.3s, padding-bottom 0.3s;
+  }
   }
 
+.navbar-toggler {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: middle;
+  float: right;
+}
+
 .nav-item {
-  margin: 40px 10px;
+  margin: 20px 10px;
   font-size: 18px;
+}
+
+.glyphicon-menu-hamburger {
+  font-size: npx;
 }
 
 .dropdown-item {
@@ -71,6 +103,8 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 .body {
   background-color: white;
+  padding-top: 200px;
+  height: 1000px;
 }
 
 .footer {
@@ -96,6 +130,11 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 .resource-container {
   margin: 20px;
+}
+
+.navbar-brand {
+  margin: 2px;
+  padding: 1px;
 }
 
 button {
@@ -133,6 +172,9 @@ h2 {
 }
 
 @media all and (min-width: 960px) {
+  .nav-item {
+    font-size: 24px;
+  }
   h1 {
     font-size: 36px;
   }
@@ -140,13 +182,21 @@ h2 {
     font-size: 24px;
   }
 }
-
-@media all and (max-width: 959px) and (min-width: 600px) {
+@media all and (max-width: 990px) and (min-width: 768px) {
+  .nav-item {
+    font-size: 14px;
+  }
+}
+@media all and (max-width: 768px) and (min-width: 600px) {
   h1 {
     font-size: 24px;
   }
   h2 {
     font-size: 18px;
+  }
+  #amor-logo {
+    height: 40px;
+    width: 80px;
   }
 }
 @media all and (max-width: 599px) and (min-width: 0) {
@@ -156,18 +206,12 @@ h2 {
   h2 {
     font-size: 12px;
   }
-}
-
-.center-content {
+  #amor-logo {
+    height: 25px;
+    width: 50px;
+  }
 }
 
 .container.body {
   padding-left: 30px;
-}
-
-.sidebar {
-  background-color: orange;
-  height: 500px;
-  width: 15%;
-  text-align: center;
 }
