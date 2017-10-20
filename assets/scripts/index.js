@@ -9,9 +9,8 @@ const viewEvents = require('./view.js')
 $(() => {
   setAPIOrigin(location, config)
   // on page load
-  $('#changepw-btn').hide()
-  $('#signout-btn').hide()
-  $('#user-logout').hide()
+  $('.logged-in').hide()
+  $('.logged-out').show()
   $('#show-offers-btn').hide()
   $('#show-requests-btn').hide()
   $('#show-admin-panel').hide()
@@ -41,9 +40,30 @@ $(() => {
   $('.delete-request-form').on('submit', resourceEvents.onDeleteRequest)
   $('.change-offer-form').on('submit', resourceEvents.onUpdateOffer)
   $('.change-request-form').on('submit', resourceEvents.onUpdateRequest)
+  $('#show-offer-form-btn').on('click', function () {
+    $('.offer-form').removeClass('hidden')
+    $('.request-form').addClass('hidden')
+  })
+  $('#show-request-form-btn').on('click', function () {
+    $('.request-form').removeClass('hidden')
+    $('.offer-form').addClass('hidden')
+  })
   // navbar events
   $('.navlinks').on('click', viewEvents.openView)
   $('#defaultOpen').click()
+  // Collapse accordion every time dropdown is shown
+  $('.dropdown-accordion').on('show.bs.dropdown', function (event) {
+    const accordion = $(this).find($(this).data('accordion'))
+    accordion.find('.panel-collapse.in').collapse('hide')
+  })
+
+  // Prevent dropdown to be closed when we click on an accordion link
+  $('.dropdown-accordion').on('click', 'a[data-toggle="collapse"]', function (event) {
+    event.preventDefault()
+    event.stopPropagation()
+    $($(this).data('parent')).find('.panel-collapse.in').collapse('hide')
+    $($(this).attr('href')).collapse('show')
+  })
 })
 
 module.exports = {

@@ -16,104 +16,122 @@
 <!-- Page body -->
 
 <body class="container">
-  <!-- Header container -->
-  <div class="row container-fluid header">
-    <!-- Header (full width) -->
-  </div>
   <!--Navbar (full width)  -->
-  <!-- <div class="row navbar"> -->
-  <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+  <nav class="navbar navbar-toggleable-md navbar-light md-faded navbar-fixed-top" id="main-nav"role="navigation">
     <div class="container">
-        <div class="navbar-header">
-          <img src="https://i.imgur.com/1OEtppp.png?1" alt="AMOR logo">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
+      <a href="#" class="navbar-brand nav-item navlinks home-link" data-id="home-page" id="defaultOpen"><img src="https://i.imgur.com/rg9tLht.png" id="amor-logo" alt="AMOR logo"></a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse-1">
+              <span class="navbar-toggler-icon"></span>
             </button>
-        </div>
+
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <li><a class="nav-item navlinks home-link" data-id="home-page" id="defaultOpen" href="#">Home</a></li>
-                <li><a class="nav-item navlinks about-link" data-id="about-page" href="#">About</a></li>
-                <li><a class="nav-item navlinks resource-link" data-id="resource-page" href="#">Resources</a></li>
-                <li>  <a class="nav-item navlinks contact-link" data-id="contact-page" href="#">Contact</a></li>
-                <li><button class="nav-item navlinks btn btn-success dropdown-toggle" href="#" id="navbarDropdownMenuLink" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Account<span class="caret"></span>
-              </button>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <li class="dropdown-header">New to AMORidarity?</li>
-                  <li class="dropdown-item" href="#" data-toggle="modal" data-target="#register-modal">Sign Up</li>
-                  <li class="dropdown-header">Registered User</li>
-                  <li class="dropdown-item" href="#" data-toggle="modal" data-target="#signin-modal">Sign In</li>
-                  <li class="dropdown-item" href="#"></li>
-                </ul></li>
-            </ul>
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+            <ul class="nav navbar-nav mr-auto">
+                <li><a class="nav-item nav-link navlinks home-link" data-id="home-page" id="defaultOpen" href="#">Home</a></li>
+                <li><a class="nav-item nav-link navlinks about-link" data-id="about-page" href="#">About</a></li>
+                <li><a class="nav-item nav-link navlinks resource-link" data-id="resource-page" href="#">Resources</a></li>
+                <li><a class="nav-item nav-link navlinks contact-link" data-id="contact-page" href="#">Contact</a></li>
+                <li id="account-dropdown"><div class="dropdown dropdown-accordion" data-accordion="#accordion">
+                <a style="color:white;" class="nav-item nav-link dropdown-toggle" href="#" id="account-dropdown-menu-btn" data-toggle="dropdown" aria-haspopup="true">
+                Account <span class="caret"></span>
+              </a>
+
+              <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                <li>
+                <div class="panel-group" id="accordion">
+                  <div class="panel panel-default logged-out">
+                    <div class="panel-heading">
+                      <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordian" href="#collapseOne">
+                        Sign up
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseOne" class="panel-collapse collapse">
+                    <div class="panel-body">
+                            <form class="form-inline user-signup-form accordion-body collapse in" id="collapseA">
+                            <h4 id="signup-prompt">Create an account</h4>
+                            <input type="text" name="credentials[email]" value="" placeholder="Email">
+                            <input type="password" name="credentials[password]" value="" placeholder="Password">
+                            <input type="password" name="credentials[password_confirmation]" value="" placeholder="Confirm Password">
+                            <button type="submit" id="signup-btn" name="register" class="btn-success register register-modal-submit" value="Register">Register</button>
+                            </form>
+                    </div>
+                  </div>
+                </div>
+                <h4 class="logged-out" style="text-align:center"> OR </h4>
+                <div class="panel panel-default logged-out">
+                  <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                      Log in
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    <form class="form-inline user-signin-form accordion-body collapse in" id="collapseB">
+                      <h4>Sign in</h4>
+                        <input type="text" name="credentials[email]" value="" placeholder="Email">
+                        <input type="password" name="credentials[password]" value="" placeholder="Password">
+                        <button type="submit" id="signin-submit-btn" name="sign-in-btn" class="btn-success login loginmodal-submit" value="Login">Login</button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default logged-in">
+                  <div class="panel-heading">
+                  <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                      Change Password
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    <form class="form-inline user-changepw-form accordion-body collapse in" id="collapseB">
+                      <h4>Change your password</h4>
+                        <input type="password" name="credentials[password]" value="" placeholder="Old Password">
+                        <input type="password" name="credentials[newpassword]" value="" placeholder="New Password">
+                        <button type="submit" id="changepw-submit-btn" name="changepw-btn" class="btn-success changepw changepwmodal-submit" value="Change Password">Change Password</button>
+                      </form>
+                    </div>
+                  </div>
+                  <div class="panel panel-default logged-in">
+                    <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a id="signout-btn" data-toggle="collapse" data-parent="#accordion" href="#">
+                        Sign out
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseFour" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <form class="form-inline accordion-body collapse in">
+                        <h4>Sign out</h4>
+                          <button type="submit" id="signout-btn" name="signout-btn" class="btn-success">Sign out</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </li>
+          </ul>
+          <h4 id="signin-prompt" style="color:white"></h4>
         </div>
+        </li>
+      </ul>
     </div>
+  </div>
+</div>
 </nav>
   <!-- Body container -->
   <div class="row container body col-sm-12">
     <!-- ar (left)-->
     <div class="sidebar col-xs-2">
       <h5 class="sidebar-prompt"></h5>
-      <button class="btn-success" id="changepw-btn"><a href="#" data-toggle="modal" data-target="#changepw-modal">Change Password</a></button>
-      <button class="btn-success" id="signout-btn">Logout</button>
-      <!-- Sign in form -->
-      <div class="modal fade" id="signin-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <div class="modal-dialog">
-          <div class="loginmodal-container">
-            <h3>Login to Your Account</h3><br>
-            <form class="user-signin-form">
-              <input type="text" name="credentials[email]" value="" placeholder="Email">
-              <input type="password" name="credentials[password]" value="" placeholder="Password">
-              <button type="submit" id="signin-submit-btn" name="sign-in-btn" class="btn-success login loginmodal-submit" value="Login">Login</button>
-            </form>
-            <div class="login-help">
-              <h4>Don't have an account yet?</h4>
-              <button class="success"><a href="#"data-toggle="modal" data-target="#register-modal">Register </a></button>
-            </div>
-          </div>
-          <!-- modal dialog closed below -->
-        </div>
-        <!-- sign in modal closed below -->
-      </div>
-      <!-- Sign up form -->
-      <div class="modal" id="register-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <div class="modal-dialog">
-          <div class="loginmodal-container">
-            <h3>Sign up!</h3>
-            <form class="user-signup-form">
-              <input type="text" name="credentials[email]" value="" placeholder="Email">
-              <input type="password" name="credentials[password]" value="" placeholder="Password">
-              <input type="password" name="credentials[password_confirmation]" value="" placeholder="Confirm Password">
-              <button type="submit" id="signup-btn" name="register" class="btn-success register register-modal-submit" value="Register">Register</button>
-            </form>
-          </div>
-          <!-- modal dialog closed below -->
-        </div>
-        <!-- register modal closed below -->
-      </div>
-      <!-- Change password form -->
-      <div class="modal fade" id="changepw-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
-        <div class="modal-dialog">
-          <div class="changepw-modal-container">
-            <h1>Change Password</h1><br>
-            <form class="user-changepw-form">
-              <input type="password" name="credentials[password]" value="" placeholder="Old Password">
-              <input type="password" name="credentials[newpassword]" value="" placeholder="New Password">
-              <button type="submit" id="changepw-submit-btn" name="changepw-btn" class="btn-success changepw changepwmodal-submit" value="Change Password">Change Password</button>
-            </form>
-          </div>
-          <!-- modal dialog closed below -->
-        </div>
-        <!-- changepwd modal closed below -->
-      </div>
       <div>
         <button class="btn-success" id="show-admin-panel">Show Admin Panel</button>
         <button class="btn-success" id="show-requests-btn">Show All Requests</button>
@@ -130,15 +148,22 @@
       <!-- Home page -->
       <div id="home-page" class="row viewcontent">
       <h1>Welcome to AMORidarity!</h1>
-      <h2>Sharing resources as a community to demand accountability, challenge injustice, and access healing after experiencing violence.<h2>
+      <h2>A project of:</h2>
+      <img id="home-img" src="https://i.imgur.com/1OEtppp.png?1" alt="AMOR">
+      <h3>Sharing resources as a community to demand accountability, challenge injustice, and access healing after experiencing violence.<h3>
       </div>
       <!-- Resource Page -->
       <!-- Offer page -->
-    <div id="resource-page"class="row viewcontent">
+    <div id="resource-page"class="viewcontent">
+
       <h2>Resources</h2>
-      <div id="center-prompt"></div>
-        <div id="offers-page" class="resource-container col-sm-5">
-          <form class="offer-form">
+      <div class="row form-buttons">
+        <button id="show-offer-form-btn" class="form-show-btn btn btn-success col-md-4">Make a Solidarity Offer</button>
+        <button id="show-request-form-btn"  class="form-show-btn btn btn-success col-md-4">Make a Solidarity Request</button>
+      </div>
+      <div class="" id="center-prompt"></div>
+        <div id="offers-page" class="row resource-container">
+          <form class="hidden offer-form">
             <h2>Add a Solidarity Offer</h2>
             <div class="form-group">
               <label for="input-name">Name</label>
@@ -211,8 +236,8 @@
           </div>
           <!-- offer form container closed below -->
         <!-- Make request form -->
-        <div id="requests-page" class="resource-container col-sm-5">
-          <form class="request-form">
+        <div id="requests-page" class="resource-container">
+          <form class="hidden request-form">
             <h2>Add a Solidarity Request</h2>
             <div class="form-group">
               <label for="input-name">Name</label>
@@ -288,7 +313,7 @@
         <!-- resource container closed below -->
       </div>
       <!-- center content closed below -->
-      <div id="about-page" class="row about-page viewcontent">
+      <div id="about-page" class="about-page viewcontent">
         <div class="about-page-content">
         <h2>Mission/Vision/Values</h2>
           <h3>Vision</h3>
