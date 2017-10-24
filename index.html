@@ -31,7 +31,7 @@
             <ul class="nav navbar-nav mr-auto">
                 <li><a class="nav-item nav-link navlinks home-link" data-id="home-page" id="defaultOpen" href="#">Home</a></li>
                 <li><a class="nav-item nav-link navlinks about-link" data-id="about-page" href="#">About</a></li>
-                <li><a class="nav-item nav-link navlinks resource-link" data-id="resource-page" href="#">Resources</a></li>
+                <li><a class="nav-item nav-link navlinks resource-link hidden" data-id="resource-page" href="#">Resources</a></li>
                 <li><a class="nav-item nav-link navlinks contact-link" data-id="contact-page" href="#">Contact</a></li>
                 <li id="account-dropdown"><div class="dropdown dropdown-accordion" data-accordion="#accordion">
                 <a style="color:white;" class="nav-item nav-link dropdown-toggle" href="#" id="account-dropdown-menu-btn" data-toggle="dropdown" aria-haspopup="true">
@@ -56,7 +56,7 @@
                             <input type="text" name="credentials[email]" value="" placeholder="Email">
                             <input type="password" name="credentials[password]" value="" placeholder="Password">
                             <input type="password" name="credentials[password_confirmation]" value="" placeholder="Confirm Password">
-                            <button type="submit" id="signup-btn" name="register" class="btn-success register register-modal-submit" value="Register">Register</button>
+                            <button type="submit" id="signup-btn" name="register" class="btn btn-success register register-modal-submit" value="Register">Register</button>
                             </form>
                     </div>
                   </div>
@@ -76,7 +76,7 @@
                       <h4>Sign in</h4>
                         <input type="text" name="credentials[email]" value="" placeholder="Email">
                         <input type="password" name="credentials[password]" value="" placeholder="Password">
-                        <button type="submit" id="signin-submit-btn" name="sign-in-btn" class="btn-success login loginmodal-submit" value="Login">Login</button>
+                        <button type="submit" id="signin-submit-btn" name="sign-in-btn" class="btn btn-success login loginmodal-submit" value="Login">Login</button>
                       </form>
                     </div>
                   </div>
@@ -95,7 +95,7 @@
                       <h4>Change your password</h4>
                         <input type="password" name="credentials[password]" value="" placeholder="Old Password">
                         <input type="password" name="credentials[newpassword]" value="" placeholder="New Password">
-                        <button type="submit" id="changepw-submit-btn" name="changepw-btn" class="btn-success changepw changepwmodal-submit" value="Change Password">Change Password</button>
+                        <button type="submit" id="changepw-submit-btn" name="changepw-btn" class="btn btn-success changepw changepwmodal-submit" value="Change Password">Change Password</button>
                       </form>
                     </div>
                   </div>
@@ -111,7 +111,7 @@
                     <div class="panel-body">
                       <form class="form-inline accordion-body collapse in">
                         <h4>Sign out</h4>
-                          <button type="submit" id="signout-btn" name="signout-btn" class="btn-success">Sign out</button>
+                          <button type="submit" id="signout-btn" name="signout-btn" class="btn btn-success">Sign out</button>
                         </form>
                       </div>
                     </div>
@@ -130,12 +130,10 @@
   <!-- Body container -->
   <div class="row container body col-sm-12">
     <!-- ar (left)-->
-    <div class="sidebar col-xs-2">
+    <div class="sidebar row col-xs-2">
       <h5 class="sidebar-prompt"></h5>
       <div>
-        <button class="btn-success" id="show-admin-panel">Show Admin Panel</button>
-        <button class="btn-success" id="show-requests-btn">Show All Requests</button>
-        <button class="btn-success" id="show-offers-btn">Show All Offers</button>
+        <button class="btn btn-success nav-link navlinks admin-link" data-id="admin-page" href="#" id="show-admin-panel">Show Admin Panel</button>
         <!-- <button class="btn-success" id="add-offer-btn">Add an Offer</button> -->
         <!-- <button class="btn-success" id="add-request-btn">Add a Request</button> -->
 
@@ -144,7 +142,7 @@
     </div>
 
     <!-- Center content -->
-    <div class="center-content col-xs-7">
+    <div class="row center-content col-xs-12">
       <!-- Home page -->
       <div id="home-page" class="row viewcontent">
       <h1>Welcome to AMORidarity!</h1>
@@ -161,9 +159,11 @@
         <button id="show-offer-form-btn" class="form-show-btn btn btn-success col-md-4">Make a Solidarity Offer</button>
         <button id="show-request-form-btn"  class="form-show-btn btn btn-success col-md-4">Make a Solidarity Request</button>
       </div>
-      <div class="" id="center-prompt"></div>
-        <div id="offers-page" class="row resource-container">
-          <form class="hidden offer-form">
+      <div><h3 class="" id="center-prompt"></h4></div>
+          <!-- offer form container closed below -->
+        <!-- Make request form -->
+        <div id="requests-page" class="resource-container">
+          <form class="row hidden offer-form">
             <h2>Add a Solidarity Offer</h2>
             <div class="form-group">
               <label for="input-name">Name</label>
@@ -191,52 +191,6 @@
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
-          <!-- Offers Table -->
-          <div class="all-offers" id='offers-container'>
-            <script class="all-offers" id="offers-template" type="text/x-handlebars-template">
-              <table class="all-offers table table-bordered" id="all-offers-table">
-                <thead>
-                  <tr>
-                    <th>Offer ID</th>
-                    <th>User ID</th>
-                    <th>Type of Offer</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {{#each offers}}
-                  <tr id="offer-{{id}}">
-                    <!-- add checkbox here for future form functionality in making matches -->
-                    <td>{{id}}</td>
-                    <td>{{user_id}}</td>
-                    <td>{{offer_type}}</td>
-                  </tr>
-                  {{/each}}
-                </tbody>
-              </table>
-            </script>
-          </div>
-          <!-- Delete offer form -->
-          <form class="delete-offer-form hidden">
-            <h4>Delete an Offer</h4>
-            <input type="number" name="offer_id" value="" placeholder="Offer ID"><br>
-            <button type="submit" id="delete-offer-btn" name="delete-offer-btn" class="btn-success">Delete</button>
-          </form>
-          <form class="change-offer-form hidden">
-            <h4>Update an Offer</h4>
-            <input type="number" name="offer_id" value="" placeholder="Offer ID">
-            <select class="form-control" name="type" id="select-resource-type">
-          <option>Legal support</option>
-          <option>Solidarity housing</option>
-          <option>Mental health support</option>
-          <option>Financial support</option>
-          <option>Other</option>
-          </select>
-            <button type="submit" id="update-offer-btn" name="update-offer-btn" class="btn-success">Update</button>
-          </form>
-          </div>
-          <!-- offer form container closed below -->
-        <!-- Make request form -->
-        <div id="requests-page" class="resource-container">
           <form class="hidden request-form">
             <h2>Add a Solidarity Request</h2>
             <div class="form-group">
@@ -265,54 +219,10 @@
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
-          <!-- Requests table -->
-          <div class="all-requests" id='requests-container'>
-            <script class="all-requests" id="requests-template" type="text/x-handlebars-template">
-              <table class="all-requests table table-bordered" id="all-requests-table">
-                <thead>
-                  <tr>
-                    <th>Request ID</th>
-                    <th>User ID</th>
-                    <th>Type of Request</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {{#each requests}}
-                  <tr id="request-{{id}}">
-                    <!-- add checkbox here for future form functionality in making matches -->
-                    <td>{{id}}</td>
-                    <td>{{user_id}}</td>
-                    <td>{{request_type}}</td>
-                  </tr>
-                  {{/each}}
-                </tbody>
-              </table>
-            </script>
-            <!-- requests container closed below -->
-          </div>
-          <!-- Delete request form -->
-          <form class="delete-request-form hidden">
-            <h4>Delete a Request</h4>
-            <input type="number" name="request_id" value="" placeholder="Request ID"><br>
-            <button type="submit" id="delete-request-btn" name="delete-request-btn" class="btn-success">Delete</button>
-          </form>
-          <form class="change-request-form hidden">
-            <h4>Update a Request</h4>
-            <input type="number" name="request_id" value="" placeholder="Request ID">
-            <select class="form-control" name="type" id="select-resource-type">
-            <option>Legal support</option>
-            <option>Solidarity housing</option>
-            <option>Mental health support</option>
-            <option>Financial support</option>
-            <option>Other</option>
-            </select>
-            <button type="submit" id="update-request-btn" name="update-request-btn" class="btn-success">Update</button>
-          </form>
-          <!-- request container closed below -->
+
         </div>
-        <!-- resource container closed below -->
       </div>
-      <!-- center content closed below -->
+      <!-- About Page -->
       <div id="about-page" class="about-page viewcontent">
         <div class="about-page-content">
         <h2>Mission/Vision/Values</h2>
@@ -329,6 +239,7 @@
             <h4>Sovereignty</h4>
           </div>
     </div>
+    <!-- Contact Page -->
     <div id="contact-page" class="row viewcontent">
 
       <div class="contact-form container">
@@ -336,9 +247,9 @@
       <div class="col-md-6 col-md-offset-1">
         <div class="well well-sm">
           <legend>Contact/Contactarnos</legend>
-          <!-- <form class="form-horizontal" action="" method="post">
+          <form class="form-horizontal" action="" method="post">
           <fieldset>
-            Name input
+            <!-- Name input -->
             <div class="form-group">
               <label class="col-md-3 control-label" for="name">Name</label>
               <div class="col-md-9">
@@ -346,7 +257,7 @@
               </div>
             </div>
 
-            Email input
+            <!-- Email input -->
             <div class="form-group">
               <label class="col-md-3 control-label" for="email">Your E-mail</label>
               <div class="col-md-9">
@@ -354,7 +265,7 @@
               </div>
             </div>
 
-            Message body
+            <!-- Message body -->
             <div class="form-group">
               <label class="col-md-3 control-label" for="message">Your message</label>
               <div class="col-md-9">
@@ -362,29 +273,188 @@
               </div>
             </div>
 
-            Form actions
+            <!-- Form actions -->
             <div class="form-group">
               <div class="col-md-12 text-right">
                 <button type="submit" class="btn btn-primary btn-lg">Submit</button>
               </div>
             </div>
           </fieldset>
-          </form> -->
+          </form>
         </div>
       </div>
 	</div>
 </div>
       <h4>Follow us on Facebook/Síganos en Facebook:</h4>
-      <i class="fa fa-facebook-square fa-lg" aria-hidden="true"></i>
-      <h3>AMOR Network</h3>
+      <a href="https://www.facebook.com/amornetwork"><img style="height:100px; width:100px;" src="https://cdn3.iconfinder.com/data/icons/picons-social/57/46-facebook-512.png"aria-hidden="true"></a>
+      <a href="https://www.facebook.com/amornetwork" style="color:red;"><h3>AMOR Network</h3></a>
   </div>
+  <!-- Admin Panel -->
+<div id="admin-page" class="row viewcontent">
+  <div class="row admin-resources-container">
+  <div id="admin-offers-column" class="admin-resource-container col-sm-5">
+  <button class="btn btn-success" id="show-offers-btn">Show All Offers</button>
+    <form class="row hidden offer-form">
+      <button class="admin-add-off-btn btn btn-success">Add a Solidarity Offer</button>
+      <div class="form-group">
+        <label for="input-name">Name</label>
+        <input type="text" name="name" class="form-control" id="input-name" aria-describedby="name-help" placeholder="Enter name">
+      </div>
+      <div class="form-group">
+        <label for="input-email">Email</label>
+        <input type="email" name="email" class="form-control" id="input-email" aria-describedby="email-help" placeholder="Enter email">
+        <small id="name-help" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="input-phone">Phone</label>
+        <input type="tel" name="phone" class="form-control" id="input-phone" aria-describedby="phone-help" placeholder="Enter phone number">
+        <small id="phone-help" class="form-text text-muted">We'll never share your phone number with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="exampleSelect1">What type of solidarity offer would you like to make?</label>
+        <select class="form-control" name="type" id="input-type">
+      <option>Legal support</option>
+      <option>Solidarity housing</option>
+      <option>Mental health support</option>
+      <option>Financial support</option>
+      <option>Other</option>
+    </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <!-- Offers Table -->
+
+    <!-- Delete offer form -->
+    <form class="delete-offer-form hidden">
+      <h4>Delete an Offer</h4>
+      <input type="number" name="offer_id" value="" placeholder="Offer ID"><br>
+      <button type="submit" id="delete-offer-btn" name="delete-offer-btn" class="btn btn-success">Delete</button>
+    </form>
+    <form class="change-offer-form hidden">
+      <h4>Update an Offer</h4>
+      <input type="number" name="offer_id" value="" placeholder="Offer ID">
+      <select class="form-control" name="type" id="select-resource-type">
+        <option>Legal support</option>
+        <option>Solidarity housing</option>
+        <option>Mental health support</option>
+        <option>Financial support</option>
+        <option>Other</option>
+      </select>
+      <button type="submit" id="update-offer-btn" name="update-offer-btn" class="btn btn-success">Update</button>
+    </form>
+    <div class="row all-offers" id='offers-container'>
+      <script class="all-offers" id="offers-template" type="text/x-handlebars-template">
+        <table class="all-offers table table-bordered" id="all-offers-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Offer ID</th>
+              <th>User ID</th>
+              <th>Type of Offer</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each offers}}
+            <tr id="offer-{{id}}">
+              <!-- add checkbox here for future form functionality in making matches -->
+              <td><input type="checkbox" class="offer-checkbox" name="offer-select" data-id="{{id}}"></td>
+              <td>{{id}}</td>
+              <td>{{user_id}}</td>
+              <td>{{offer_type}}</td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </script>
     </div>
-    <!-- body bs row div closed below -->
-  </div>
-<div class="footer col-xs-12">
-  <div class="footer-content">
+    </div>
+    <div class="admin-match-column col-sm-2">
+      <button class="set-match-btn btn btn-success">Set Match</button>
+    </div>
+  <div id="admin-requests-column" class="admin-resource-container col-sm-5">
+    <button class="btn btn-success " id="show-requests-btn">Show All Requests</button>
+    <form class="row hidden request-form">
+      <button class="admin-add-req-btn btn btn-success">Add a Solidarity Request</button>
+      <div class="form-group">
+        <label for="input-name">Name</label>
+        <input type="text" name="name" class="form-control" id="input-name" aria-describedby="name-help" placeholder="Enter name">
+      </div>
+      <div class="form-group">
+        <label for="input-email">Email</label>
+        <input type="email" name="email" class="form-control" id="input-email" aria-describedby="email-help" placeholder="Enter email">
+        <small id="name-help" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="input-phone">Phone</label>
+        <input type="tel" name="phone" class="form-control" id="input-phone" aria-describedby="phone-help" placeholder="Enter phone number">
+        <small id="phone-help" class="form-text text-muted">We'll never share your phone number with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="exampleSelect1">What type of solidarity request would you like to make?</label>
+        <select class="form-control" name="type" id="input-type">
+          <option>Legal support</option>
+          <option>Solidarity housing</option>
+          <option>Mental health support</option>
+          <option>Financial support</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+  <form class="delete-request-form hidden">
+    <h4>Delete a Request</h4>
+    <input type="number" name="request_id" value="" placeholder="Request ID"><br>
+    <button type="submit" id="delete-request-btn" name="delete-request-btn" class="btn btn-success">Delete</button>
+  </form>
+  <form class="change-request-form hidden">
+    <h4>Update a Request</h4>
+    <input type="number" name="request_id" value="" placeholder="Request ID">
+    <select class="form-control" name="type" id="select-resource-type">
+    <option>Legal support</option>
+    <option>Solidarity housing</option>
+    <option>Mental health support</option>
+    <option>Financial support</option>
+    <option>Other</option>
+    </select>
+    <button type="submit" id="update-request-btn" name="update-request-btn" class="btn btn-success">Update</button>
+  </form>
+  <div class="row all-requests" id='requests-container'>
+    <script class="all-requests" id="requests-template" type="text/x-handlebars-template">
+      <table class="all-requests table table-bordered" id="all-requests-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Request ID</th>
+            <th>User ID</th>
+            <th>Type of Request</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each requests}}
+          <tr id="request-{{id}}">
+            <!-- add checkbox here for future form functionality in making matches -->
+            <td><input type="checkbox" class="request-checkbox" name="request-select" data-id="{{id}}"></td>
+            <td>{{id}}</td>
+            <td>{{user_id}}</td>
+            <td>{{request_type}}</td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </script>
+    <!-- requests container closed below -->
   </div>
 </div>
+  </div>
+  </div>
+<footer class="text-center container-fluid" id="footer">
+  <div class="footer-above">
+    <h6>Made by Ash Trull 2017</h6>
+    <div class="container">
+  </div>
+</div>
+</footer>
 </body>
 
 

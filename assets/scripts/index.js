@@ -25,6 +25,7 @@ $(() => {
   // resource form events
   $('.show-admin-panel').on('click', function () {
     $('#resource-page').click()
+    $('.show-admin-panel').hide()
   })
   $('#add-offer-btn').on('click', function () {
     $('.offer-form').show()
@@ -48,6 +49,9 @@ $(() => {
     $('.request-form').removeClass('hidden')
     $('.offer-form').addClass('hidden')
   })
+  $('#show-admin-panel').on('click', function () {
+    $('.resource-link').click()
+  })
   // navbar events
   $('.navlinks').on('click', viewEvents.openView)
   $('#defaultOpen').click()
@@ -63,6 +67,19 @@ $(() => {
     event.stopPropagation()
     $($(this).data('parent')).find('.panel-collapse.in').collapse('hide')
     $($(this).attr('href')).collapse('show')
+  })
+  const limit = 1
+  $('input.offer-checkbox').on('click', function (event) {
+    if ($('input[name="offer-select"]:checked').length > limit) {
+      this.checked = false
+      console.log('You can only select one offer at a time')
+    }
+  })
+  $('input.request-checkbox').on('click', function (event) {
+    if ($('input[name="request-select"]:checked').length > limit) {
+      this.checked = false
+      console.log('You can only select one request at a time')
+    }
   })
 })
 
