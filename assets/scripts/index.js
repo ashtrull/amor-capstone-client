@@ -25,6 +25,7 @@ $(() => {
   // resource form events
   $('.show-admin-panel').on('click', function () {
     $('#resource-page').click()
+    $('.show-admin-panel').hide()
   })
   $('#add-offer-btn').on('click', function () {
     $('.offer-form').show()

@@ -11,7 +11,11 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 #home-img {
   height: 400px;
   width: 540px;
-  margin: 10px auto;
+  margin: 20px 100px 20px 275px;
+}
+
+.home-page {
+  text-align: center;
 }
 
 .clearfix {
@@ -145,6 +149,10 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   width: auto;
 }
 
+.btn-success {
+  background-color: #F79200;
+}
+
 .navbar-brand {
   margin: 2px;
   padding: 1px;
@@ -185,6 +193,12 @@ h1 {
 
 h2 {
   text-align: center;
+}
+
+footer {
+  background-color: black;
+  margin-top: 100px;
+  color: white;
 }
 
 @media all and (min-width: 960px) {
