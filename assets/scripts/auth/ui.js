@@ -32,6 +32,7 @@ const signInSuccess = (data) => {
     $('.change-offer-form').removeClass('hidden')
     $('.delete-request-form').removeClass('hidden')
     $('.change-request-form').removeClass('hidden')
+    $('.resource-link').removeClass('hidden')
   } else {
     $('#add-offer-btn').show()
     $('#add-request-btn').show()
@@ -57,15 +58,14 @@ const changePasswordSuccess = (data) => {
 const changePasswordFail = () => {
   console.log('Incorrect old password. Please try again.')
   $('#changepw-modal').modal('toggle')
-  $('.sidebar-prompt').text('Email/password combination not found')
+  $('#signin-prompt').text('Email/password combination not found')
 }
 
 const signOutSuccess = (data) => {
   app.user = null
   console.log(data)
   console.log('Successfully signed out!')
-  $('.sidebar-prompt').text('Sign in to get started!')
-  $('#signin-prompt').text('')
+  $('#signin-prompt').text('Sign in to get started!')
   $('.logged-out').show()
   $('.logged-in').hide()
   $('#show-requests-btn').hide()
