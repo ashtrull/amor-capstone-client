@@ -1,6 +1,17 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+#account-dropdown {
+  padding: 15px;
+  margin: 20px 10px;
+}
+
+#add-resources-container {
+  height: 300px;
+  margin: 10% auto;
+  background-color: black;
+}
+
 #amor-logo {
   float:left;
   height: 40px;
@@ -11,65 +22,51 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 #home-img {
   height: 400px;
   width: 540px;
-  margin: 20px 100px 20px 275px;
 }
 
-.home-page {
-  text-align: center;
-}
-
-.clearfix {
-  overflow: auto;
+#main-nav {
+  background-color: black;
 }
 
 #select-resource-type {
   width: 150px;
 }
 
-#add-resources-container {
-  height: 300px;
-  margin: 10% auto;
-  background-color: black;
+.about-page-content {
+  padding: 10px;
 }
 
-// #buffer-div {
-//   height: 100px;
-// }
-
-#main-nav {
-  background-color: black;
+.all-offers {
+  margin: 10px;
 }
 
-#account-dropdown {
-  padding: 15px;
-  margin: 20px 10px;
+.all-requests {
+  margin: 10px
 }
 
-@media (min-width: 960px) {
-  #main-nav {
-    padding-top: 25px;
-    padding-bottom: 25px;
-    -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
-    -moz-transition: padding-top 0.3s, padding-bottom 0.3s;
-    transition: padding-top 0.3s, padding-bottom 0.3s;
-  }
-  }
-
-.navbar-toggler {
-  display: inline-block;
-  width: 1.5em;
-  height: 1.5em;
-  vertical-align: middle;
-  float: right;
+.body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  height: 1000px;
 }
 
-.nav-item {
-  margin: 20px 10px;
-  font-size: 18px;
+.btn-success {
+  background-color: #F79200;
 }
 
-.glyphicon-menu-hamburger {
-  font-size: npx;
+.center-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.clearfix {
+  overflow: auto;
 }
 
 .dropdown-item {
@@ -89,15 +86,32 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   }
 }
 
+.footer {
+  // align-self: stretch;
+  background-color: black;
+  width: 100%
+}
 
+.form-show-btn {
+  margin: 20px 10px 0px 10px;
+  width: auto;
+}
 
-.modal-dialog {
-  position: absolute;
-  background-color: white;
-  padding: auto auto;
-  z-index: 10040;
-  overflow: auto;
-  overflow-y: auto;
+.form-buttons {
+  margin: 10px 5px 0px 10px;
+  text-align: center;
+  }
+
+.glyphicon-menu-hamburger {
+  font-size: npx;
+}
+
+.landing-page {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .modal {
@@ -108,49 +122,18 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   top: 25%;
 }
 
-.body {
+.modal-dialog {
+  position: absolute;
   background-color: white;
-  padding-top: 400px;
-  height: 1000px;
+  padding: auto auto;
+  z-index: 10040;
+  overflow: auto;
+  overflow-y: auto;
 }
 
-.form-buttons {
-  margin: 10px 5px 0px 10px;
-  text-align: center;
-  }
-
-.footer {
-  background-color: black;
-  height: 100px;
-  width: 100%;
-  left: 0;
-  right: 0;
-  bottom: 0;
-}
-
-.center-content {
-  margin: 10px 10px 10px 10px;
-}
-
-// .hidden {
-//   display: none;
-// }
-
-.about-page-content {
-  padding: 10px;
-}
-
-.resource-container {
-  margin: 10px;
-}
-
-.form-show-btn {
-  margin: 20px 10px 0px 10px;
-  width: auto;
-}
-
-.btn-success {
-  background-color: #F79200;
+.nav-item {
+  margin: 20px 10px;
+  font-size: 18px;
 }
 
 .navbar-brand {
@@ -158,24 +141,39 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   padding: 1px;
 }
 
-.all-offers {
-  margin: 10px;
+.navbar-nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
 }
 
-.all-requests {
-  margin: 10px
+.navbar-toggle {
+    display: inline-block;
+    color: white;
+    position: relative;
+    float: right;
+    padding: 9px 10px;
+    margin-top: 8px;
+    margin-right: 15px;
+    margin-bottom: 8px;
+    background-color: black;
+    border: 1px solid white;
+    border-radius: 4px;
+}
+
+.navbar-toggle .icon-bar {
+  background-color: black;
+  color: white;
+}
+
+.resource-container {
+  margin: 10px;
 }
 
 a {
   color: white;
-}
-
-
-table {
-  padding: 10px;
-  margin: 10px;
-  border-style: solid;
-  border-color: black;
 }
 
 img {
@@ -201,7 +199,21 @@ footer {
   color: white;
 }
 
-@media all and (min-width: 960px) {
+table {
+  padding: 10px;
+  margin: 10px;
+  border-style: solid;
+  border-color: black;
+}
+
+@media (min-width: 960px) {
+  #main-nav {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    -webkit-transition: padding-top 0.3s, padding-bottom 0.3s;
+    -moz-transition: padding-top 0.3s, padding-bottom 0.3s;
+    transition: padding-top 0.3s, padding-bottom 0.3s;
+  }
   .nav-item {
     font-size: 24px;
   }
@@ -211,12 +223,14 @@ footer {
   h2 {
     font-size: 24px;
   }
-}
+  }
+
 @media all and (max-width: 990px) and (min-width: 768px) {
   .nav-item {
     font-size: 14px;
   }
 }
+
 @media all and (max-width: 768px) and (min-width: 600px) {
   h1 {
     font-size: 24px;
@@ -225,12 +239,15 @@ footer {
     font-size: 18px;
   }
   #amor-logo {
-    height: 40px;
-    width: 80px;
+    height: 30px;
+    width: 120px;
   }
   #home-img {
     height: 200px;
     width: 270px;
+  }
+  .navbar-nav {
+    width: 25%;
   }
 }
 @media all and (max-width: 599px) and (min-width: 0) {
@@ -242,10 +259,13 @@ footer {
   }
   #amor-logo {
     height: 25px;
-    width: 50px;
+    width: 100px;
   }
   #home-img {
     height: 100px;
     width: 135px;
+  }
+  .navbar-nav {
+    width: 25%;
   }
 }

@@ -17,29 +17,30 @@
 
 <body class="container">
   <!--Navbar (full width)  -->
-  <nav class="navbar navbar-toggleable-md navbar-light md-faded navbar-fixed-top" id="main-nav"role="navigation">
+  <nav class="navbar navbar-toggleable-md navbar-default md-faded navbar-fixed-top" id="main-nav"role="navigation">
     <div class="container">
-      <a href="#" class="navbar-brand nav-item navlinks home-link" data-id="home-page" id="defaultOpen"><img src="https://i.imgur.com/rg9tLht.png" id="amor-logo" alt="AMOR logo"></a>
+      <a href="#" class="nav-item navlinks home-link" data-id="home-page" id="defaultOpen"><img src="https://i.imgur.com/rg9tLht.png" id="amor-logo" alt="AMOR logo"></a>
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse-1">
-              <span class="navbar-toggler-icon"></span>
+            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar" style="color:white;"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
             </button>
 
-
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+        <div class="collapse navbar-collapse navbar-right" id="navbar-collapse-1">
             <ul class="nav navbar-nav mr-auto">
                 <li><a class="nav-item nav-link navlinks home-link" data-id="home-page" id="defaultOpen" href="#">Home</a></li>
                 <li><a class="nav-item nav-link navlinks about-link" data-id="about-page" href="#">About</a></li>
                 <li><a class="nav-item nav-link navlinks resource-link hidden" data-id="resource-page" href="#">Resources</a></li>
                 <li><a class="nav-item nav-link navlinks contact-link" data-id="contact-page" href="#">Contact</a></li>
                 <li id="account-dropdown"><div class="dropdown dropdown-accordion" data-accordion="#accordion">
-                <a style="color:white;" class="nav-item nav-link dropdown-toggle" href="#" id="account-dropdown-menu-btn" data-toggle="dropdown" aria-haspopup="true">
-                Account <span class="caret"></span>
+                <a style="color:white;" class="nav-item nav-link dropdown-toggle" href="#" id="account-dropdown-menu-btn" data-toggle="dropdown" aria-haspopup="true">Account<span class="caret"></span>
               </a>
 
-              <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
-                <li>
+              <div class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                <!-- <li> -->
                 <div class="panel-group" id="accordion">
                   <div class="panel panel-default logged-out">
                     <div class="panel-heading">
@@ -117,6 +118,7 @@
                     </div>
                   </div>
               </div>
+            </div>
             </li>
           </ul>
           <h4 id="signin-prompt" style="color:white"></h4>
@@ -129,37 +131,29 @@
 </nav>
   <!-- Body container -->
   <div class="row container body col-sm-12">
-    <!-- ar (left)-->
     <div class="sidebar row col-xs-2">
       <h5 class="sidebar-prompt"></h5>
       <div>
         <button class="btn btn-success nav-link navlinks admin-link" data-id="admin-page" href="#" id="show-admin-panel">Show Admin Panel</button>
-        <!-- <button class="btn-success" id="add-offer-btn">Add an Offer</button> -->
-        <!-- <button class="btn-success" id="add-request-btn">Add a Request</button> -->
-
       </div>
-      <!-- sidebar closed below -->
     </div>
-
     <!-- Center content -->
-    <div class="row center-content col-xs-12">
+  <div class="row center-content col-xs-12">
       <!-- Home page -->
-      <div id="home-page" class="row viewcontent">
-      <h1>Welcome to AMORidarity!</h1>
-      <h2>A project of:</h2>
-      <img id="home-img" src="https://i.imgur.com/1OEtppp.png?1" alt="AMOR">
-      <h3>Sharing resources as a community to demand accountability, challenge injustice, and access healing after experiencing violence.<h3>
+      <div id="home-page" class="landing-page row viewcontent">
+        <h1>Welcome to AMORidarity!</h1>
+        <h2>A project of:</h2>
+        <img id="home-img" src="https://i.imgur.com/1OEtppp.png?1" alt="AMOR">
+        <h3>Sharing resources as a community to demand accountability, challenge injustice, and access healing after experiencing violence.<h3>
       </div>
       <!-- Resource Page -->
-      <!-- Offer page -->
-    <div id="resource-page"class="viewcontent">
-
-      <h2>Resources</h2>
-      <div class="row form-buttons">
-        <button id="show-offer-form-btn" class="form-show-btn btn btn-success col-md-4">Make a Solidarity Offer</button>
-        <button id="show-request-form-btn"  class="form-show-btn btn btn-success col-md-4">Make a Solidarity Request</button>
-      </div>
-      <div><h3 class="" id="center-prompt"></h4></div>
+      <div id="resource-page"class="viewcontent">
+        <h2>Resources</h2>
+          <div class="row form-buttons">
+            <button id="show-offer-form-btn" class="form-show-btn btn btn-success col-md-4">Make a Solidarity Offer</button>
+            <button id="show-request-form-btn"  class="form-show-btn btn btn-success col-md-4">Make a Solidarity Request</button>
+          </div>
+        <div><h3 class="" id="center-prompt"></h3></div>
           <!-- offer form container closed below -->
         <!-- Make request form -->
         <div id="requests-page" class="resource-container">
@@ -448,12 +442,12 @@
 </div>
   </div>
   </div>
-<footer class="text-center container-fluid" id="footer">
-  <div class="footer-above">
-    <h6>Made by Ash Trull 2017</h6>
-    <div class="container">
-  </div>
 </div>
+</div>
+<footer class="footer" id="footer">
+  <div class="container-fluid">
+    <h6>Made by Ash Trull 2017</h6>
+  </div>
 </footer>
 </body>
 

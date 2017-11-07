@@ -52,7 +52,7 @@ $(() => {
   $('#show-admin-panel').on('click', function () {
     $('.resource-link').click()
   })
-  // navbar events
+  // Navbar events
   $('.navlinks').on('click', viewEvents.openView)
   $('#defaultOpen').click()
   // Collapse accordion every time dropdown is shown
@@ -68,6 +68,15 @@ $(() => {
     $($(this).data('parent')).find('.panel-collapse.in').collapse('hide')
     $($(this).attr('href')).collapse('show')
   })
+  $(document).click(function () {
+    const clickover = $(event.target)
+    const _opened = $('.navbar-collapse').hasClass('in')
+    if (_opened === true && !clickover.hasClass('navbar-toggle')) {
+      $('.navbar-toggle').click()
+    }
+  })
+
+  // Form events
   const limit = 1
   $('input.offer-checkbox').on('click', function (event) {
     if ($('input[name="offer-select"]:checked').length > limit) {
